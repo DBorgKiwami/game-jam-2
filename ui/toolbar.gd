@@ -1,15 +1,15 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	SignalBus.connect("broken_part", _break_part)
+	#SignalBus.connect("broken_part", _break_part)
 	SignalBus.connect("part_repaired", _fix_part)
 
 # broken part signal received: enable respective button
-func _break_part(index : int):
-	match index:
-		CarStats.engine:
-			pass
-			print("engine broken!")
+#func _break_part(index : int):
+	#match index:
+		#CarStats.engine:
+			#pass
+			#print("engine broken!")
 
 # fixed part signal received: disable respective button and minigame
 func _fix_part(index : int):

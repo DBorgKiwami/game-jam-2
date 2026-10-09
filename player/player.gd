@@ -31,7 +31,7 @@ var turningSpeed : float = 0
 
 func _input(event: InputEvent) -> void:
 	pass
-	
+
 func rotating(delta: float):
 	direction = direction.rotated(turningSpeed * delta)
 	sprite.rotate(turningSpeed * delta)
@@ -48,9 +48,9 @@ func _physics_process(delta: float) -> void:#
 	
 	# TEST WORKING CASE FOR BREAKING ENGINE
 	# TODO: actually breaking engine
-	if Input.is_action_just_pressed("brakes"):
-		print("braking caused engine to break. boohoo fix it.")
-		SignalBus.broken_part.emit(0)
+	#if Input.is_action_just_pressed("brakes"):
+		#print("braking caused engine to break. boohoo fix it.")
+		#SignalBus.broken_part.emit(0)
 
 	if Input.is_action_pressed("brakes"):
 		activeMaxSpeed = maxBrakingSpeed
@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:#
 	# Movement Code
 	# Forward and Reverse car movement
 	
-	if Input.is_action_pressed("gas_pedal") and CarStats.engine:
+	if Input.is_action_pressed("gas_pedal") and CarStats.car_parts["engine"]:
 		var accel = activeAccel * delta
 		forwardSpeed = clampf(forwardSpeed + accel, -maxSpeed, maxSpeed)
 	elif Input.is_action_pressed("reverse"):
@@ -108,4 +108,8 @@ func _physics_process(delta: float) -> void:#
 	
 	rotating(delta)
 	move_and_slide()
+	print($Timer.time_left)
 	#print(velocity)
+
+func _on_timer_timeout() -> void:
+	CarStats.break_something()

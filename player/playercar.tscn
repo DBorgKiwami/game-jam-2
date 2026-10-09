@@ -43,6 +43,7 @@ particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 scale_min = 0.01
 scale_max = 0.01
+color = Color(0, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_axjsj")
 
 [node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint")]
@@ -103,3 +104,9 @@ texture = ExtResource("4_axjsj")
 lifetime = 10.0
 fixed_fps = 144
 process_material = SubResource("ParticleProcessMaterial_57qmd")
+
+[node name="Timer" type="Timer" parent="." unique_id=1379835781]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
