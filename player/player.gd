@@ -14,7 +14,8 @@ var direction : Vector2 = Vector2.UP
 @export var turnAccel : float = 1.0
 @export var turnDeccel : float = 4.0
 @export var breakingTurnAccel : float = 2.0
-@export var breakingTurnDeccel : float = 1.5
+@export var breakingTurnDeccel : float = 6.0
+@export var turnNeutral : float = 0.15
 
 @export var sprite : Sprite2D
 
@@ -75,9 +76,16 @@ func _physics_process(delta: float) -> void:#
 		turningSpeed = clampf((turningSpeed + (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
 	else:
 		if turningSpeed < 0:
-			turningSpeed = clampf((turningSpeed + (activeTurnDecel * delta)), -maxTurnSpeed, 0)
+			turningSpeed = clampf((turningSpeed + (activeTurnDecel * delta)), -maxTurnSpeed, maxTurnSpeed)
 		elif turningSpeed > 0:
-			turningSpeed = clampf((turningSpeed - (activeTurnDecel * delta)), 0, maxTurnSpeed)
+			turningSpeed = clampf((turningSpeed - (activeTurnDecel * delta)), -maxTurnSpeed, maxTurnSpeed)
+		if abs(turningSpeed) < turnNeutral:
+			turningSpeed = 0
+	
+	# Lower Speed If Deccelarating
+	
+	if forwardSpeed > activeMaxSpeed:
+		forwardSpeed = clampf(forwardSpeed - activeDecel, activeMaxSpeed, maxSpeed)
 	
 	# Set velocity
 	

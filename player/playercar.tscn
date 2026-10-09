@@ -8,12 +8,13 @@
 [node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_wwgfg")
 maxSpeed = 500.0
-maxBrakingSpeed = 100.0
+maxBrakingSpeed = 300.0
 acceleration = 100.0
 deceleration = 50.0
 brakingAccel = 20.0
-brakingDecel = 250.0
+brakingDecel = 200.0
 turnAccel = 2.0
+breakingTurnAccel = 4.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593473271]
