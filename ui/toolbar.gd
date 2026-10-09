@@ -1,0 +1,29 @@
+extends CanvasLayer
+
+func _ready() -> void:
+	SignalBus.connect("broken_part", _break_part)
+	SignalBus.connect("part_repaired", _fix_part)
+
+# broken part signal received: enable respective button
+func _break_part(index : int):
+	$ToolbarAndWheel/Toolbar/BtnContainer/Tool1.disabled = false
+	print("part broken!", index)
+
+# fixed part signal received: disable respective button and minigame
+func _fix_part(index : int):
+	$ToolbarAndWheel/Toolbar/BtnContainer/Tool1.disabled = true
+	close_all_tabs()
+	print("part fixed!", index)
+
+# tool 1 enables minigame 1 panel
+func _on_tool_1_pressed() -> void:
+	$MinigameContainer/Testminigame.visible = true
+
+# return btn closes current/all minigame panel(s)
+func _on_return_pressed() -> void:
+	print("close minigame!")
+	close_all_tabs()
+
+func close_all_tabs() -> void:
+	for mg in $MinigameContainer.get_children():
+		mg.visible = false

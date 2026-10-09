@@ -44,6 +44,12 @@ func _physics_process(delta: float) -> void:#
 	var activeTurnAccel = 0.0
 	var activeTurnDecel = 0.0
 	
+	# TEST WORKING CASE FOR BREAKING ENGINE
+	# TODO: actually breaking engine
+	if Input.is_action_just_pressed("brakes"):
+		print("braking caused engine to break. boohoo fix it.")
+		SignalBus.broken_part.emit(1)
+
 	if Input.is_action_pressed("brakes"):
 		activeMaxSpeed = maxBrakingSpeed
 		activeAccel = brakingAccel
@@ -93,4 +99,4 @@ func _physics_process(delta: float) -> void:#
 	
 	rotating(delta)
 	move_and_slide()
-	print(velocity)
+	#print(velocity)

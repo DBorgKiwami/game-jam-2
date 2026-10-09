@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bkhavqi0ynfy4"]
 
+[ext_resource type="Script" uid="uid://cry37rui407f3" path="res://ui/toolbar.gd" id="1_ata6n"]
+[ext_resource type="Texture2D" uid="uid://wviha2wioqlf" path="res://fsos.png" id="1_gb7al"]
 [ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://icon.svg" id="2_ata6n"]
 [ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
+[ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://car_long_black_04.png" id="2_h6tbp"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
+script = ExtResource("1_ata6n")
 
 [node name="ToolbarAndWheel" type="HBoxContainer" parent="." unique_id=394098995]
 custom_minimum_size = Vector2(800, 0)
@@ -25,9 +29,21 @@ custom_maximum_size = Vector2(500, 80)
 layout_mode = 2
 size_flags_vertical = 8
 
+[node name="Return" type="TextureButton" parent="ToolbarAndWheel/Toolbar" unique_id=1661156649]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = -24.0
+offset_top = -67.0
+offset_right = 56.0
+offset_bottom = 13.0
+texture_normal = ExtResource("2_h6tbp")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="BtnContainer" type="HBoxContainer" parent="ToolbarAndWheel/Toolbar" unique_id=1791372169]
 custom_minimum_size = Vector2(400, 80)
-custom_maximum_size = Vector2(-1, 80)
+custom_maximum_size = Vector2(500, 80)
 propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 8
@@ -43,39 +59,50 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=1817529361]
+[node name="Tool1" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=940231098]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_ata6n")
-expand_mode = 2
+disabled = true
+texture_normal = ExtResource("1_gb7al")
+texture_disabled = ExtResource("2_ata6n")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=1590943306]
+[node name="Tool2" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=307893912]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_ata6n")
-expand_mode = 2
+texture_normal = ExtResource("2_ata6n")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=556592261]
+[node name="Tool3" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=2114041395]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_ata6n")
-expand_mode = 2
+texture_normal = ExtResource("2_ata6n")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=642569212]
+[node name="Tool4" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=752578682]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_ata6n")
-expand_mode = 2
+texture_normal = ExtResource("2_ata6n")
+ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=1589587931]
+[node name="Tool5" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=1461788804]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("2_ata6n")
-expand_mode = 2
+texture_normal = ExtResource("2_ata6n")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SteeringWheel" type="TextureRect" parent="ToolbarAndWheel" unique_id=304196981]
@@ -91,3 +118,10 @@ scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
 
 [node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
+visible = false
+
+[node name="Testminigame2" parent="MinigameContainer" unique_id=479206221 instance=ExtResource("2_gb7al")]
+visible = false
+
+[connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool1" to="." method="_on_tool_1_pressed"]
