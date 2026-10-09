@@ -21,6 +21,12 @@ var direction : Vector2 = Vector2.UP
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
 
+func _ready() -> void:
+	SignalBus.connect("broken_part", _break_part)
+
+func _break_part(index : int):
+	print("part broken!", index)
+
 func _input(event: InputEvent) -> void:
 	pass
 	
