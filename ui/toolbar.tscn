@@ -5,20 +5,22 @@
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 
 [node name="ToolbarAndWheel" type="HBoxContainer" parent="." unique_id=394098995]
+custom_minimum_size = Vector2(800, 0)
+custom_maximum_size = Vector2(800, -1)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -527.0
+offset_top = -250.0
+offset_right = 527.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Toolbar" type="Panel" parent="ToolbarAndWheel" unique_id=152526847]
-custom_minimum_size = Vector2(800, 80)
-custom_maximum_size = Vector2(800, 80)
+custom_minimum_size = Vector2(500, 80)
+custom_maximum_size = Vector2(500, 80)
 layout_mode = 2
 size_flags_vertical = 8
 
@@ -81,3 +83,5 @@ layout_mode = 2
 texture = ExtResource("2_ata6n")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="MinigameContainer" type="CanvasLayer" parent="." unique_id=985513871]
