@@ -1,22 +1,27 @@
 [gd_scene format=3 uid="uid://b3k3orsewelgp"]
 
-[ext_resource type="Script" uid="uid://cqfubgg54yyu5" path="res://player/player.gd" id="1_l8y1m"]
-[ext_resource type="Texture2D" uid="uid://4q1tyunoecpq" path="res://car_long_black_12.png" id="2_l8y1m"]
+[ext_resource type="Script" uid="uid://cqfubgg54yyu5" path="res://player/player.gd" id="1_wwgfg"]
+[ext_resource type="Texture2D" uid="uid://4q1tyunoecpq" path="res://car_long_black_12.png" id="2_outkj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
 [node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite")]
-script = ExtResource("1_l8y1m")
+script = ExtResource("1_wwgfg")
 maxSpeed = 500.0
-acceleration = 50.0
-deceleration = 150.0
+maxBrakingSpeed = 100.0
+acceleration = 100.0
+deceleration = 50.0
+brakingAccel = 20.0
+brakingDecel = 250.0
+turnAccel = 2.0
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593473271]
 z_index = 1
-texture = ExtResource("2_l8y1m")
+texture = ExtResource("2_outkj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=25879058]
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1415005060]
+zoom = Vector2(0.5, 0.5)
