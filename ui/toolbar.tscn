@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkhavqi0ynfy4"]
 
 [ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://icon.svg" id="2_ata6n"]
+[ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 
@@ -85,3 +86,8 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="MinigameContainer" type="CanvasLayer" parent="." unique_id=985513871]
+offset = Vector2(430, 420)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
+
+[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
