@@ -6,14 +6,14 @@ func _ready() -> void:
 
 # broken part signal received: enable respective button
 func _break_part(index : int):
-	$ToolbarAndWheel/Toolbar/BtnContainer/Tool1.disabled = false
-	print("part broken!", index)
+	match index:
+		CarStats.engine:
+			pass
+			print("engine broken!")
 
 # fixed part signal received: disable respective button and minigame
 func _fix_part(index : int):
-	$ToolbarAndWheel/Toolbar/BtnContainer/Tool1.disabled = true
 	close_all_tabs()
-	print("part fixed!", index)
 
 # tool 1 enables minigame 1 panel
 func _on_tool_1_pressed() -> void:

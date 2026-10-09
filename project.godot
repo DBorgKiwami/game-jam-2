@@ -18,6 +18,7 @@ config/icon="uid://wviha2wioqlf"
 [autoload]
 
 SignalBus="*uid://c4gmx3bj0nt45"
+CarStats="*uid://d0glklfbyrpy5"
 
 [display]
 

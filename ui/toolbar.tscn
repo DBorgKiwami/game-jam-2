@@ -63,7 +63,6 @@ alignment = 1
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("1_gb7al")
 texture_disabled = ExtResource("2_ata6n")
 ignore_texture_size = true
