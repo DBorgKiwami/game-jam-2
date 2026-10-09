@@ -1,6 +1,60 @@
 [gd_scene format=3 uid="uid://c0q51j3dsg355"]
 
 [ext_resource type="Script" uid="uid://cd12wh8511d8i" path="res://minigames/radio.gd" id="1_52d37"]
+[ext_resource type="Texture2D" uid="uid://d20wujofet7ma" path="res://radio dial.png" id="2_htwsd"]
+[ext_resource type="Texture2D" uid="uid://c81eclii8d1qb" path="res://radio gague.png" id="3_pij3h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 107.37784
 
 [node name="Radio" type="Node2D" unique_id=1467513764]
 script = ExtResource("1_52d37")
+
+[node name="Radio Interactibles" type="Node2D" parent="." unique_id=1100404298]
+position = Vector2(-699.405, -223.085)
+
+[node name="Radio Dial" type="Sprite2D" parent="Radio Interactibles" unique_id=837002654]
+position = Vector2(540, 360)
+texture = ExtResource("2_htwsd")
+
+[node name="Area2D" type="Area2D" parent="Radio Interactibles/Radio Dial" unique_id=1388560636]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio Interactibles/Radio Dial/Area2D" unique_id=68316424]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Radio Gauge" type="Sprite2D" parent="Radio Interactibles" unique_id=1115610536]
+position = Vector2(540, 360)
+texture = ExtResource("3_pij3h")
+
+[node name="Panel" type="Panel" parent="." unique_id=1473536304]
+z_index = -1
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="." unique_id=832022817]
+offset_left = -308.13
+offset_top = -232.98
+offset_right = -268.13
+offset_bottom = -209.97998
+theme_override_font_sizes/font_size = 128
+text = "15.?"
+
+[node name="Timer" type="Timer" parent="." unique_id=2092151379]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[connection signal="mouse_entered" from="Radio Interactibles/Radio Dial/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Radio Interactibles/Radio Dial/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

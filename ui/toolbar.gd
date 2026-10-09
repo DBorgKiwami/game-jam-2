@@ -32,3 +32,8 @@ func close_all_tabs() -> void:
 func _on_tool_2_pressed() -> void:
 	$MinigameContainer/Heater.visible = true
 	pass # Replace with function body.
+
+
+func _on_tool_3_pressed() -> void:
+	$MinigameContainer/Radio.visible = true
+	pass # Replace with function body.
