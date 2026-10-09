@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0q51j3dsg355"]
+
+[ext_resource type="Script" uid="uid://cd12wh8511d8i" path="res://minigames/radio.gd" id="1_52d37"]
+
+[node name="Radio" type="Node2D" unique_id=1467513764]
+script = ExtResource("1_52d37")
