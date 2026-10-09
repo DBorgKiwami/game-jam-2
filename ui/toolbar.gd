@@ -27,3 +27,8 @@ func _on_return_pressed() -> void:
 func close_all_tabs() -> void:
 	for mg in $MinigameContainer.get_children():
 		mg.visible = false
+
+
+func _on_tool_2_pressed() -> void:
+	$MinigameContainer/Heater.visible = true
+	pass # Replace with function body.
