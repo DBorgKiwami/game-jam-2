@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bq6dbw55wnsw0"]
+
+[ext_resource type="Script" uid="uid://b00m5wrsseh80" path="res://minigames/testminigame.gd" id="1_iycow"]
+
+[node name="Testminigame" type="Node2D" unique_id=1738096528]
+script = ExtResource("1_iycow")
+
+[node name="Panel" type="Panel" parent="." unique_id=682609614]
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel" unique_id=2031281073]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Press me 10 times to win"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
