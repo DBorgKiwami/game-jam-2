@@ -32,12 +32,18 @@ scale_max = 0.099999994
 scale_curve = SubResource("CurveTexture_outkj")
 color_ramp = SubResource("GradientTexture1D_outkj")
 
+[sub_resource type="Gradient" id="Gradient_axjsj"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_axjsj"]
+gradient = SubResource("Gradient_axjsj")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57qmd"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 scale_min = 0.01
 scale_max = 0.01
-color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_axjsj")
 
 [node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint")]
 script = ExtResource("1_wwgfg")
@@ -73,7 +79,13 @@ amount = 6
 texture = ExtResource("3_outkj")
 process_material = SubResource("ParticleProcessMaterial_wwgfg")
 
-[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Left Tire" unique_id=626504283]
+[node name="Back Right Tire" type="Node2D" parent="Particle Effects" unique_id=643377992]
+position = Vector2(33, 60)
+
+[node name="Front Left Tire" type="Node2D" parent="Particle Effects" unique_id=1107131385]
+position = Vector2(-33, -25)
+
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Front Left Tire" unique_id=1481430765]
 z_index = 1
 amount = 1000
 texture = ExtResource("4_axjsj")
@@ -81,10 +93,10 @@ lifetime = 10.0
 fixed_fps = 144
 process_material = SubResource("ParticleProcessMaterial_57qmd")
 
-[node name="Back Right Tire" type="Node2D" parent="Particle Effects" unique_id=643377992]
-position = Vector2(33, 60)
+[node name="Front Right Tire" type="Node2D" parent="Particle Effects" unique_id=646915493]
+position = Vector2(33, -25)
 
-[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Right Tire" unique_id=53607624]
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Front Right Tire" unique_id=61092071]
 z_index = 1
 amount = 1000
 texture = ExtResource("4_axjsj")
