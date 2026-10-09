@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqfubgg54yyu5" path="res://player/player.gd" id="1_wwgfg"]
 [ext_resource type="Texture2D" uid="uid://4q1tyunoecpq" path="res://car_long_black_12.png" id="2_outkj"]
 [ext_resource type="Texture2D" uid="uid://c8jc85cs4mntf" path="res://particles/smoke.png" id="3_outkj"]
+[ext_resource type="Texture2D" uid="uid://wu8ay8iah7mp" path="res://particles/square.png" id="4_axjsj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
@@ -30,6 +31,13 @@ scale_min = 0.099999994
 scale_max = 0.099999994
 scale_curve = SubResource("CurveTexture_outkj")
 color_ramp = SubResource("GradientTexture1D_outkj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57qmd"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.01
+color = Color(0, 0, 0, 1)
 
 [node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint")]
 script = ExtResource("1_wwgfg")
@@ -65,5 +73,19 @@ amount = 6
 texture = ExtResource("3_outkj")
 process_material = SubResource("ParticleProcessMaterial_wwgfg")
 
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Left Tire" unique_id=1950799173]
+z_index = 1
+amount = 100
+texture = ExtResource("4_axjsj")
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_57qmd")
+
 [node name="Back Right Tire" type="Node2D" parent="Particle Effects" unique_id=643377992]
 position = Vector2(33, 60)
+
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Right Tire" unique_id=5155197]
+z_index = 1
+amount = 1000
+texture = ExtResource("4_axjsj")
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_57qmd")
