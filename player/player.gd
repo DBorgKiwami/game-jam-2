@@ -18,6 +18,7 @@ var direction : Vector2 = Vector2.UP
 @export var turnNeutral : float = 0.15
 
 @export var sprite : Sprite2D
+@export var particleEffectPivotPoint : Node2D
 
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
@@ -29,6 +30,7 @@ func _input(event: InputEvent) -> void:
 func rotating(delta: float):
 	direction = direction.rotated(turningSpeed * delta)
 	sprite.rotate(turningSpeed * delta)
+	particleEffectPivotPoint.rotate(turningSpeed * delta)
 
 func _physics_process(delta: float) -> void:#
 	# Check if player is breaking

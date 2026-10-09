@@ -6,8 +6,14 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
+[sub_resource type="Gradient" id="Gradient_outkj"]
+colors = PackedColorArray(0.42595553, 0.42595556, 0.42595538, 0.7921569, 1, 1, 1, 0.1764706)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_outkj"]
+gradient = SubResource("Gradient_outkj")
+
 [sub_resource type="Curve" id="Curve_axjsj"]
-_data = [Vector2(0, 0.43750006), 0.0, 0.0, 0, 0, Vector2(0.6774193, 0.6607144), 1.1669881, 1.1669881, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.2678572), 0.0, 0.0, 0, 0, Vector2(0.6774193, 0.6607144), 1.1669881, 1.1669881, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_outkj"]
@@ -18,11 +24,14 @@ particle_flag_disable_z = true
 direction = Vector3(0, -39.775, 0)
 initial_velocity_min = 47.21
 initial_velocity_max = 47.21
+angular_velocity_min = -18.540016
+angular_velocity_max = 18.539984
 scale_min = 0.099999994
 scale_max = 0.099999994
 scale_curve = SubResource("CurveTexture_outkj")
+color_ramp = SubResource("GradientTexture1D_outkj")
 
-[node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite")]
+[node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint")]
 script = ExtResource("1_wwgfg")
 maxSpeed = 500.0
 maxBrakingSpeed = 300.0
@@ -33,6 +42,7 @@ brakingDecel = 200.0
 turnAccel = 2.0
 breakingTurnAccel = 4.0
 sprite = NodePath("Sprite2D")
+particleEffectPivotPoint = NodePath("Particle Effects")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593473271]
 z_index = 2
@@ -44,16 +54,16 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1415005060]
 zoom = Vector2(0.5, 0.5)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=306167694]
+[node name="Particle Effects" type="Node2D" parent="." unique_id=306167694]
 
-[node name="Back Left Tire" type="Node2D" parent="Node2D" unique_id=380681674]
+[node name="Back Left Tire" type="Node2D" parent="Particle Effects" unique_id=380681674]
 position = Vector2(-33, 60)
 
-[node name="Back Left Tire" type="GPUParticles2D" parent="Node2D/Back Left Tire" unique_id=1329336729]
+[node name="Exhaust Pipe" type="GPUParticles2D" parent="Particle Effects/Back Left Tire" unique_id=1329336729]
 z_index = 3
 amount = 6
 texture = ExtResource("3_outkj")
 process_material = SubResource("ParticleProcessMaterial_wwgfg")
 
-[node name="Back Right Tire" type="GPUParticles2D" parent="Node2D" unique_id=1837637516]
+[node name="Back Right Tire" type="Node2D" parent="Particle Effects" unique_id=643377992]
 position = Vector2(33, 60)
