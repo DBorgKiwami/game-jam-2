@@ -73,19 +73,21 @@ amount = 6
 texture = ExtResource("3_outkj")
 process_material = SubResource("ParticleProcessMaterial_wwgfg")
 
-[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Left Tire" unique_id=1950799173]
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Left Tire" unique_id=626504283]
 z_index = 1
-amount = 100
+amount = 1000
 texture = ExtResource("4_axjsj")
 lifetime = 10.0
+fixed_fps = 144
 process_material = SubResource("ParticleProcessMaterial_57qmd")
 
 [node name="Back Right Tire" type="Node2D" parent="Particle Effects" unique_id=643377992]
 position = Vector2(33, 60)
 
-[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Right Tire" unique_id=5155197]
+[node name="Tire Tracks" type="GPUParticles2D" parent="Particle Effects/Back Right Tire" unique_id=53607624]
 z_index = 1
 amount = 1000
 texture = ExtResource("4_axjsj")
 lifetime = 10.0
+fixed_fps = 144
 process_material = SubResource("ParticleProcessMaterial_57qmd")
