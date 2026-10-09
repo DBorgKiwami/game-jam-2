@@ -45,12 +45,6 @@ func _physics_process(delta: float) -> void:#
 	var activeDecel = 0.0
 	var activeTurnAccel = 0.0
 	var activeTurnDecel = 0.0
-	
-	# TEST WORKING CASE FOR BREAKING ENGINE
-	# TODO: actually breaking engine
-	#if Input.is_action_just_pressed("brakes"):
-		#print("braking caused engine to break. boohoo fix it.")
-		#SignalBus.broken_part.emit(0)
 
 	if Input.is_action_pressed("brakes"):
 		activeMaxSpeed = maxBrakingSpeed
@@ -83,9 +77,9 @@ func _physics_process(delta: float) -> void:#
 	
 	# Turning movement
 	
-	if Input.is_action_pressed("turn_left"):
+	if Input.is_action_pressed("turn_left") and CarStats.car_parts["wheel"]:
 		turningSpeed = clampf((turningSpeed - (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
-	elif Input.is_action_pressed("turn_right"):
+	elif Input.is_action_pressed("turn_right") and CarStats.car_parts["wheel"]:
 		turningSpeed = clampf((turningSpeed + (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
 	else:
 		if turningSpeed < 0:
@@ -108,7 +102,7 @@ func _physics_process(delta: float) -> void:#
 	
 	rotating(delta)
 	move_and_slide()
-	print($Timer.time_left)
+	#print($Timer.time_left)
 	#print(velocity)
 
 func _on_timer_timeout() -> void:
