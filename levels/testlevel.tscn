@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ccpandbhv4j6j"]
+
+[ext_resource type="PackedScene" uid="uid://b3k3orsewelgp" path="res://player/playercar.tscn" id="1_04qlu"]
+[ext_resource type="Texture2D" uid="uid://ccirfl0vqb1ib" path="res://tall_handheld.png" id="1_mvx7d"]
+
+[node name="Testlevel" type="Node2D" unique_id=1543706350]
+
+[node name="Car" parent="." unique_id=2090852087 instance=ExtResource("1_04qlu")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1139017269]
+texture = ExtResource("1_mvx7d")
