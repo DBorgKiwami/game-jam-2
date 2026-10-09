@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ygw5kfv61nsx"]
+
+[ext_resource type="Script" uid="uid://budfmf280kc3p" path="res://minigames/heater.gd" id="1_7sknv"]
+[ext_resource type="Texture2D" uid="uid://m8ty88gl8i8o" path="res://temperature dial.png" id="1_ekvbm"]
+[ext_resource type="Texture2D" uid="uid://cluwljeotpgkl" path="res://temperature gauge.png" id="2_7sknv"]
+[ext_resource type="Script" uid="uid://tx8hy5ee3oe4" path="res://minigames/dial.gd" id="3_m7hpl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 102.396286
+
+[node name="Heater" type="Node2D" unique_id=1334399775]
+script = ExtResource("1_7sknv")
+
+[node name="Temperature Dial" type="Sprite2D" parent="." unique_id=1659047644]
+modulate = Color(1, 0.87058824, 1, 1)
+position = Vector2(-314, 0)
+rotation = -1.5707964
+texture = ExtResource("1_ekvbm")
+script = ExtResource("3_m7hpl")
+
+[node name="Area2D" type="Area2D" parent="Temperature Dial" unique_id=1529879626]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temperature Dial/Area2D" unique_id=1012418332]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Temp Gauge" type="Sprite2D" parent="." unique_id=2006863567]
+modulate = Color(1, 0.87058824, 1, 1)
+position = Vector2(-314, 0)
+texture = ExtResource("2_7sknv")
+
+[node name="Panel" type="Panel" parent="." unique_id=1471675296]
+visible = false
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="Temperature Dial/Area2D" to="Temperature Dial" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Temperature Dial/Area2D" to="Temperature Dial" method="_on_area_2d_mouse_exited"]
