@@ -1,7 +1,9 @@
 extends CharacterBody2D
+class_name Car
 
 var direction : Vector2 = Vector2.UP
 var directionBeforeBreak : Vector2 = Vector2.UP
+var inStorm = false
 
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
