@@ -3,21 +3,18 @@ extends CanvasLayer
 func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
 	SignalBus.connect("part_repaired", _fix_part)
+	var buttons := $ToolbarAndWheel/Toolbar/BtnContainer.get_children()
+	for i in range(buttons.size()):
+		buttons[i].connect("pressed", _on_tool_pressed.bind(i))
 
-# broken part signal received: enable respective button
-#func _break_part(index : int):
-	#match index:
-		#CarStats.engine:
-			#pass
-			#print("engine broken!")
+func _on_tool_pressed(tool_index : int):
+	close_all_tabs()
+	var mg := $MinigameContainer.get_child(tool_index)
+	mg.visible = true
 
 # fixed part signal received: disable respective button and minigame
 func _fix_part(index : int):
 	close_all_tabs()
-
-# tool 1 enables minigame 1 panel
-func _on_tool_1_pressed() -> void:
-	$MinigameContainer/Testminigame.visible = true
 
 # return btn closes current/all minigame panel(s)
 func _on_return_pressed() -> void:
@@ -27,13 +24,3 @@ func _on_return_pressed() -> void:
 func close_all_tabs() -> void:
 	for mg in $MinigameContainer.get_children():
 		mg.visible = false
-
-
-func _on_tool_2_pressed() -> void:
-	$MinigameContainer/Heater.visible = true
-	pass # Replace with function body.
-
-
-func _on_tool_3_pressed() -> void:
-	$MinigameContainer/Radio.visible = true
-	pass # Replace with function body.

@@ -116,10 +116,10 @@ offset = Vector2(430, 420)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
 
-[node name="Radio" parent="MinigameContainer" unique_id=1467513764 instance=ExtResource("5_e376i")]
+[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
 visible = false
 
-[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
+[node name="Radio" parent="MinigameContainer" unique_id=1467513764 instance=ExtResource("5_e376i")]
 visible = false
 
 [node name="Heater" parent="MinigameContainer" unique_id=1334399775 instance=ExtResource("6_4dapg")]
@@ -129,6 +129,3 @@ visible = false
 visible = false
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool1" to="." method="_on_tool_1_pressed"]
-[connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool2" to="." method="_on_tool_2_pressed"]
-[connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool3" to="." method="_on_tool_3_pressed"]
