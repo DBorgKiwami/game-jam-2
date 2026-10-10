@@ -8,10 +8,27 @@
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
 [ext_resource type="Texture2D" uid="uid://biaoop45bdjv0" path="res://images/steeringwheel.png" id="5_m6d4s"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
+[ext_resource type="Texture2D" uid="uid://dg40u5axy633f" path="res://images/steering column.png" id="6_i38vh"]
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1481369879]
+custom_minimum_size = Vector2(250, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 101.78003
+offset_top = -250.0
+offset_right = 351.7802
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_i38vh")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="ToolbarAndWheel" type="HBoxContainer" parent="." unique_id=394098995]
 custom_minimum_size = Vector2(800, 0)
