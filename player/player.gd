@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var direction : Vector2 = Vector2.UP
+var directionBeforeBreak : Vector2 = Vector2.UP
 
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
@@ -94,9 +95,14 @@ func _physics_process(delta: float) -> void:#
 	if forwardSpeed > activeMaxSpeed:
 		forwardSpeed = clampf(forwardSpeed - activeDecel, activeMaxSpeed, maxSpeed)
 	
-	# Set velocity
+	if Input.is_action_just_pressed("brakes"):
+		directionBeforeBreak = direction
 	
-	velocity = forwardSpeed * direction
+	# Set velocity
+	if !Input.is_action_pressed("brakes"):
+		velocity = forwardSpeed * direction
+	else:
+		velocity = forwardSpeed * ((directionBeforeBreak + direction) / 2)
 	
 	# Call rotating function
 	
