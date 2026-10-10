@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://jcmxfx0dp2h3" path="res://images/directionarrow1.png" id="5_dg6uw"]
 [ext_resource type="Texture2D" uid="uid://riqun1ltakn0" path="res://images/directionarrow2.png" id="6_8vqfn"]
 [ext_resource type="Texture2D" uid="uid://bcw6c0ijw3yya" path="res://images/directionarrow3.png" id="7_ndoe4"]
+[ext_resource type="Texture2D" uid="uid://dhl5wm4wi4w2j" path="res://images/dropshadow.png" id="9_ndoe4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0kak"]
 radius = 280.0
@@ -61,6 +62,7 @@ script = ExtResource("1_0bg5l")
 shape = SubResource("CircleShape2D_l0kak")
 
 [node name="House Sprite" type="AnimatedSprite2D" parent="." unique_id=1043248419]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 autoplay = "default"
 frame_progress = 0.94963264
@@ -95,6 +97,11 @@ script = ExtResource("5_8vqfn")
 sprite_frames = SubResource("SpriteFrames_0bg5l")
 autoplay = "default"
 frame_progress = 0.6972833
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687025612]
+position = Vector2(-2, -5)
+scale = Vector2(1.6953125, 1.6953125)
+texture = ExtResource("9_ndoe4")
 
 [connection signal="body_entered" from="House Area" to="." method="_on_house_area_body_entered"]
 [connection signal="body_exited" from="House Area" to="." method="_on_house_area_body_exited"]

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccirfl0vqb1ib" path="res://images/tall_handheld.png" id="1_mvx7d"]
 [ext_resource type="PackedScene" uid="uid://pw02kfhir1h5" path="res://storm/storm.tscn" id="1_t3dhk"]
 [ext_resource type="PackedScene" uid="uid://bl4vjqa80jcv6" path="res://levels/house.tscn" id="5_8j3fl"]
+[ext_resource type="PackedScene" uid="uid://bk48pkt04qx62" path="res://levels/tree.tscn" id="6_l0kak"]
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 
@@ -19,3 +20,27 @@ texture = ExtResource("1_mvx7d")
 
 [node name="House" parent="." unique_id=696121312 instance=ExtResource("5_8j3fl")]
 position = Vector2(-935, -119)
+
+[node name="Tree" parent="." unique_id=663084134 instance=ExtResource("6_l0kak")]
+position = Vector2(-337, 451)
+
+[node name="Tree2" parent="." unique_id=1281932538 instance=ExtResource("6_l0kak")]
+position = Vector2(677, 158)
+
+[node name="Tree3" parent="." unique_id=514443808 instance=ExtResource("6_l0kak")]
+position = Vector2(409, 337)
+
+[node name="Tree4" parent="." unique_id=53296936 instance=ExtResource("6_l0kak")]
+position = Vector2(-186, 690)
+
+[node name="Tree5" parent="." unique_id=702790688 instance=ExtResource("6_l0kak")]
+position = Vector2(133, 748)
+
+[node name="Tree6" parent="." unique_id=2040907410 instance=ExtResource("6_l0kak")]
+position = Vector2(-1, 517)
+
+[node name="Tree7" parent="." unique_id=813965029 instance=ExtResource("6_l0kak")]
+position = Vector2(415, 754)
+
+[node name="Tree8" parent="." unique_id=445781327 instance=ExtResource("6_l0kak")]
+position = Vector2(215, 468)

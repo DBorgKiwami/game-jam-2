@@ -13,6 +13,7 @@ var inStorm = false
 @export var deceleration : float = 30.0
 @export var brakingAccel : float = 5.0
 @export var brakingDecel : float = 50.0
+@export var crashSpeedMultiplier : float = 0.1
 
 @export var turnAccel : float = 1.0
 @export var turnDeccel : float = 4.0
@@ -113,7 +114,9 @@ func _physics_process(delta: float) -> void:#
 	# Call rotating function
 	
 	rotating(delta)
-	move_and_slide()
+	var crashed = move_and_slide()
+	if crashed:
+		forwardSpeed *= crashSpeedMultiplier
 	#print($Timer.time_left)
 	#print(velocity)
 
