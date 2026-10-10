@@ -89,6 +89,8 @@ func _physics_process(delta: float) -> void:#
 		turningSpeed = clampf((turningSpeed - (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
 	elif Input.is_action_pressed("turn_right") and CarStats.car_parts["wheel"]:
 		turningSpeed = clampf((turningSpeed + (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
+	elif !CarStats.car_parts["wheel"]:
+		pass
 	else:
 		if turningSpeed < 0:
 			turningSpeed = clampf((turningSpeed + (activeTurnDecel * delta)), -maxTurnSpeed, maxTurnSpeed)
