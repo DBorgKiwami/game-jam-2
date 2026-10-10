@@ -27,7 +27,9 @@ var offroad := false
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
 
+@onready var dirt_texture: Sprite2D = $"../DirtTexture"
 #func _ready() -> void:
+	#dirt_texture.modulate.a = 0.0
 	#SignalBus.connect("broken_part", _break_part)
 
 #func _break_part(index : int):
@@ -40,15 +42,22 @@ func rotating(delta: float):
 	direction = direction.rotated(turningSpeed * delta)
 	sprite.rotate(turningSpeed * delta)
 	particleEffectPivotPoint.rotate(turningSpeed * delta)
-
+	
+# Decrease player health/warm if in storm or heater is off
 var t := 0.0
 func _process(delta: float) -> void:
 	t = delta * 0.025
-	if inStorm:
+	if inStorm or !CarStats.car_parts["heating"]:
 		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)
 	else:
 		PlayerStats.health = lerp(PlayerStats.health, 100.0, t)
-
+	if !CarStats.car_parts["windshield"]:
+		dirt_texture.modulate.a = 1.0
+		#dirt_texture.modulate.a = lerp(dirt_texture.modulate.a, 1.0, t)
+	else:
+		dirt_texture.modulate.a = 0.0
+		#dirt_texture.modulate.a = lerp(dirt_texture.modulate.a, 0.0, t)
+		
 func _physics_process(delta: float) -> void:#
 	# Check if player is breaking
 	
@@ -123,6 +132,7 @@ func _physics_process(delta: float) -> void:#
 	#print(velocity)
 
 func _on_timer_timeout() -> void:
+	print("timer out!")
 	CarStats.break_something()
 
 func _on_level_area_2d_body_exited(body: Node2D) -> void:

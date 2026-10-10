@@ -65,6 +65,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	print("Hi")
-	SignalBus.emit_signal("part_repaired", 2)
+	SignalBus.emit_signal("part_repaired", CarStats.car_part.RADIO)
 	inputNumber = 2
 	pass # Replace with function body.

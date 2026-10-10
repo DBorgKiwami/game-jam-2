@@ -65,6 +65,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Fog" type="Sprite2D" parent="." unique_id=1711576771]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(12, -99)
 texture = ExtResource("3_7pmbe")
 

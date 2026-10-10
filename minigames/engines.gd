@@ -44,7 +44,7 @@ func ripped():
 	for i in range(rips % 3):
 		lightIndicators.get_child(i).modulate = Color(0,255,0)
 	if rips >= 3:
-		SignalBus.emit_signal("part_repaired", 3)
+		SignalBus.emit_signal("part_repaired", CarStats.car_part.ENGINE)
 		ripcord.position = ripcordOrigin
 		for child in lightIndicators.get_children():
 			child.modulate = Color(255,0,0)

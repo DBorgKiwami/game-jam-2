@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		beingClicked = false
 	
 	if rotation_degrees > -57:
-		SignalBus.emit_signal("part_repaired", 1)
+		SignalBus.emit_signal("part_repaired", CarStats.car_part.RADIO)
 		has_mouse = false
 		beingClicked = false
 		rotation_degrees = -90

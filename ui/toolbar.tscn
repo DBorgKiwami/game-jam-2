@@ -97,7 +97,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Tool5" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=1461788804]
-visible = false
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
@@ -117,18 +116,19 @@ offset = Vector2(430, 420)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
 
-[node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
+[node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
+visible = false
 
-[node name="Radio" parent="MinigameContainer" unique_id=1467513764 instance=ExtResource("5_e376i")]
+[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
 visible = false
 
 [node name="Heater" parent="MinigameContainer" unique_id=1334399775 instance=ExtResource("6_4dapg")]
 visible = false
 
-[node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
+[node name="Radio" parent="MinigameContainer" unique_id=1467513764 instance=ExtResource("5_e376i")]
 visible = false
 
-[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
+[node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
 visible = false
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]

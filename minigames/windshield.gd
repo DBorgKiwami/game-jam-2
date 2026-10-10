@@ -13,10 +13,17 @@ var beingClicked = false
 var started := false
 var fog_tween: Tween
 
-func reset() -> void:
-	if fog_tween: fog_tween.kill()
-	fog.modulate.a = 1.0
-	started = false
+func _ready() -> void:
+	SignalBus.connect("broken_part", reset)
+
+func reset(tool_idx : int) -> void:
+	# reset if windshield is acc broken
+	print("here")
+	if !CarStats.car_parts["windshield"]:
+		print("resetting")
+		if fog_tween: fog_tween.kill()
+		fog.modulate.a = 1.0
+		started = false
 
 func _on_area_2d_mouse_entered() -> void:
 	wshield_has_mouse = true
@@ -45,5 +52,4 @@ func _on_fog_area_2d_entered(area: Area2D) -> void:
 		fog_tween = create_tween()
 		fog_tween.tween_property(fog, "modulate:a", target, 0.1)
 		if target <= 0:
-			SignalBus.part_repaired.emit(0)
-			reset()
+			SignalBus.part_repaired.emit(CarStats.car_part.WINDSHIELD)
