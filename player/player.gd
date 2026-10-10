@@ -3,7 +3,8 @@ class_name Car
 
 var direction : Vector2 = Vector2.UP
 var directionBeforeBreak : Vector2 = Vector2.UP
-var inStorm = false
+var inStorm := false
+var offroad := false
 
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
@@ -25,7 +26,6 @@ var inStorm = false
 
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
-var offroad := false
 
 #func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
@@ -44,7 +44,7 @@ func rotating(delta: float):
 var t := 0.0
 func _process(delta: float) -> void:
 	t = delta * 0.025
-	if offroad:
+	if inStorm:
 		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)
 	else:
 		PlayerStats.health = lerp(PlayerStats.health, 100.0, t)
