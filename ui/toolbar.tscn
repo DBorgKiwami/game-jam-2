@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
+[ext_resource type="PackedScene" uid="uid://dh8s2kyvn520g" path="res://minigames/windshield.tscn" id="9_m6d4s"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
@@ -116,8 +117,7 @@ offset = Vector2(430, 420)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
 
-[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
-visible = false
+[node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
 
 [node name="Radio" parent="MinigameContainer" unique_id=1467513764 instance=ExtResource("5_e376i")]
 visible = false
@@ -125,10 +125,10 @@ visible = false
 [node name="Heater" parent="MinigameContainer" unique_id=1334399775 instance=ExtResource("6_4dapg")]
 visible = false
 
-[node name="Testminigame2" parent="MinigameContainer" unique_id=479206221 instance=ExtResource("2_gb7al")]
+[node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
 visible = false
 
-[node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
+[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
 visible = false
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]

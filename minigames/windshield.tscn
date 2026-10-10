@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dh8s2kyvn520g"]
+
+[ext_resource type="Script" uid="uid://ckcppo6kfrenh" path="res://minigames/windshield.gd" id="1_7pmbe"]
+[ext_resource type="Texture2D" uid="uid://chnevs7bbylrr" path="res://images/wind_shield.png" id="2_fqfgp"]
+[ext_resource type="Texture2D" uid="uid://dignekr3rbv8n" path="res://images/dirt_texture.png" id="3_7pmbe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pmbe"]
+size = Vector2(505, 515)
+
+[node name="Windshield" type="Node2D" unique_id=1467513764]
+script = ExtResource("1_7pmbe")
+l_shield_min_rot = -100
+l_shield_max_rot = 15
+r_shield_min_rot = 30
+r_shield_max_rot = 150
+
+[node name="Windshield Interactibles" type="Node2D" parent="." unique_id=1100404298]
+position = Vector2(-671, -222)
+
+[node name="LWindShield" type="Sprite2D" parent="Windshield Interactibles" unique_id=1418928990]
+position = Vector2(454.2897, 494.6634)
+rotation = 0.2617994
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("2_fqfgp")
+offset = Vector2(380.28, -319.395)
+
+[node name="LWindShieldArea2D" type="Area2D" parent="Windshield Interactibles/LWindShield" unique_id=618704405]
+position = Vector2(379.2206, -314.2857)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Windshield Interactibles/LWindShield/LWindShieldArea2D" unique_id=31939675]
+visible = false
+position = Vector2(-379.2207, 314.28577)
+polygon = PackedVector2Array(685.78, -382.495, 685.78, -380.79498, 513.07996, -369.395, 507.07996, -369.395, 268.97998, -287.395, 264.68, -287.395, -33.320007, -81.39499, -37.320007, -81.39499, -102.22, 7.305023, -102.22, 10.305023, -128.32, 28.605011, -141.41998, 28.605011, -120.22, 77.704956, -120.22, 85.704956, -44.71997, 92.60498, -37.52002, 92.60498, 2.4799805, 43.60501, 11.47998, 43.60501, 3.7800293, 11.805023, 218.07996, -149.39499, 221.18, -149.39499, 278.78003, -212.29501, 544.68005, -253.39499, 551.68005, -253.39499, 742.88, -326.895, 895.0801, -305.395, 903.68005, -305.395, 913.68005, -318.395, 925.98, -318.395, 910.78, -348.79498, 910.78, -354.69498, 841.78, -376.69498, 841.78, -380.29498)
+
+[node name="RWindShield" type="Sprite2D" parent="Windshield Interactibles" unique_id=1761244245]
+position = Vector2(564, 515.99994)
+rotation = 2.6179938
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("2_fqfgp")
+offset = Vector2(-400, -319.395)
+flip_h = true
+
+[node name="RWindShieldArea2D" type="Area2D" parent="Windshield Interactibles/RWindShield" unique_id=1234046269]
+position = Vector2(379.2206, -314.2857)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Windshield Interactibles/RWindShield/RWindShieldArea2D" unique_id=789630014]
+visible = false
+position = Vector2(-379.2207, 314.28552)
+polygon = PackedVector2Array(-705.5, -382.495, -705.5, -380.79498, -532.8, -369.395, -526.8, -369.395, -288.7, -287.395, -284.40002, -287.395, 13.599976, -81.39499, 17.599976, -81.39499, 82.5, 7.305023, 82.5, 10.305023, 108.599976, 28.605011, 121.69995, 28.605011, 100.5, 77.704956, 100.5, 85.704956, 25, 92.60498, 17.799988, 92.60498, -22.200012, 43.60501, -31.200012, 43.60501, -23.5, 11.805023, -237.79999, -149.39499, -240.90002, -149.39499, -298.5, -212.29501, -564.4, -253.39499, -571.4, -253.39499, -762.6, -326.895, -914.80005, -305.395, -923.4, -305.395, -933.4, -318.395, -945.69995, -318.395, -930.5, -348.79498, -930.5, -354.69498, -861.5, -376.69498, -861.5, -380.29498)
+
+[node name="Panel" type="Panel" parent="." unique_id=1473536304]
+z_index = -1
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fog" type="Sprite2D" parent="." unique_id=1711576771]
+position = Vector2(12, -99)
+texture = ExtResource("3_7pmbe")
+
+[node name="Area2D" type="Area2D" parent="Fog" unique_id=874138189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fog/Area2D" unique_id=2033265881]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_7pmbe")
+
+[connection signal="mouse_entered" from="Windshield Interactibles/LWindShield/LWindShieldArea2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Windshield Interactibles/LWindShield/LWindShieldArea2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Windshield Interactibles/RWindShield/RWindShieldArea2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Windshield Interactibles/RWindShield/RWindShieldArea2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="Fog/Area2D" to="." method="_on_fog_area_2d_entered"]
