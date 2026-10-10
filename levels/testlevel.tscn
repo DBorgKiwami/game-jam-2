@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b3k3orsewelgp" path="res://player/playercar.tscn" id="1_04qlu"]
 [ext_resource type="PackedScene" uid="uid://bkhavqi0ynfy4" path="res://ui/toolbar.tscn" id="1_hb8io"]
 [ext_resource type="Texture2D" uid="uid://ccirfl0vqb1ib" path="res://images/tall_handheld.png" id="1_mvx7d"]
+[ext_resource type="PackedScene" uid="uid://pw02kfhir1h5" path="res://storm/storm.tscn" id="1_t3dhk"]
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
+
+[node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
 
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]
 

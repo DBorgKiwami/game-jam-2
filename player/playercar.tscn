@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wu8ay8iah7mp" path="res://particles/square.png" id="4_axjsj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 28.460499
 
 [sub_resource type="Gradient" id="Gradient_outkj"]
 colors = PackedColorArray(0.42595553, 0.42595556, 0.42595538, 0.7921569, 1, 1, 1, 0.1764706)
@@ -68,7 +69,7 @@ texture = ExtResource("2_outkj")
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1415005060]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Particle Effects" type="Node2D" parent="." unique_id=306167694]
 
