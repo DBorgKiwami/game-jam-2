@@ -25,6 +25,7 @@ func _fix_part(index : int):
 
 # tool 1 enables minigame 1 panel
 func _on_tool_1_pressed() -> void:
+	close_all_tabs()
 	$MinigameContainer/Testminigame.visible = true
 
 # return btn closes current/all minigame panel(s)
@@ -38,15 +39,18 @@ func close_all_tabs() -> void:
 
 
 func _on_tool_2_pressed() -> void:
+	close_all_tabs()
 	$MinigameContainer/Heater.visible = true
 	pass # Replace with function body.
 
 
 func _on_tool_3_pressed() -> void:
+	close_all_tabs()
 	$MinigameContainer/Radio.visible = true
 	pass # Replace with function body.
 
 
 func _on_tool_4_pressed() -> void:
+	close_all_tabs()
 	$MinigameContainer/Engine.visible = true
 	pass # Replace with function body.
