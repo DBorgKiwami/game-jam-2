@@ -23,6 +23,7 @@ var directionBeforeBreak : Vector2 = Vector2.UP
 
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
+var offroad := false
 
 #func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
@@ -38,6 +39,14 @@ func rotating(delta: float):
 	sprite.rotate(turningSpeed * delta)
 	particleEffectPivotPoint.rotate(turningSpeed * delta)
 
+var t := 0.0
+func _process(delta: float) -> void:
+	t = delta * 0.025
+	if offroad:
+		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)
+	else:
+		PlayerStats.health = lerp(PlayerStats.health, 100.0, t)
+
 func _physics_process(delta: float) -> void:#
 	# Check if player is breaking
 	
@@ -47,7 +56,7 @@ func _physics_process(delta: float) -> void:#
 	var activeTurnAccel = 0.0
 	var activeTurnDecel = 0.0
 
-	if Input.is_action_pressed("brakes"):
+	if Input.is_action_pressed("brakes") or offroad:
 		activeMaxSpeed = maxBrakingSpeed
 		activeAccel = brakingAccel
 		activeDecel = brakingDecel
@@ -113,3 +122,11 @@ func _physics_process(delta: float) -> void:#
 
 func _on_timer_timeout() -> void:
 	CarStats.break_something()
+
+func _on_level_area_2d_body_exited(body: Node2D) -> void:
+	#print("car has left level area!")
+	offroad = true
+
+func _on_level_area_2d_body_entered(body: Node2D) -> void:
+	#print("car has returned to level area!")
+	offroad = false
