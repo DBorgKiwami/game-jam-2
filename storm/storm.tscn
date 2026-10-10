@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://c5m4raj5idvg0" path="res://storm/storm.gdshader" id="2_uhs3t"]
 [ext_resource type="Texture2D" uid="uid://wu8ay8iah7mp" path="res://particles/square.png" id="3_uhs3t"]
 [ext_resource type="Shader" uid="uid://bv7d7yb1x81k5" path="res://storm/stormouter.gdshader" id="4_4s1ki"]
+[ext_resource type="Texture2D" uid="uid://dignekr3rbv8n" path="res://images/dirt_texture.png" id="5_cltr3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1v4d"]
 
@@ -40,8 +41,8 @@ texture = ExtResource("3_uhs3t")
 [node name="Storm Effect" type="Sprite2D" parent="." unique_id=2094402353]
 texture_filter = 2
 material = SubResource("ShaderMaterial_uhs3t")
-scale = Vector2(4, 4)
-texture = ExtResource("3_uhs3t")
+scale = Vector2(2000, 2000)
+texture = ExtResource("5_cltr3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
