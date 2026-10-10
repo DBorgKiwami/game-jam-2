@@ -30,12 +30,12 @@ func _physics_process(delta: float) -> void:
 		#dialSprite.rotation_degrees += (Input.get_last_mouse_velocity().x)/100
 		#turnDistance += (Input.get_last_mouse_velocity().x)/100
 	if Input.is_action_just_released("left_click"):
-		beingClicked = false
-		ripcord.rotation = 0
-		if ripcord.position.distance_to(ripcordOrigin) > requiredDistance:
+		if ripcord.position.distance_to(ripcordOrigin) > requiredDistance and beingClicked:
 			#print("Ripped")
 			#print(ripcord.position.distance_to(ripcordOrigin))
 			ripped()
+		beingClicked = false
+		ripcord.rotation = 0
 	if !beingClicked:
 		ripcord.position = ripcord.position.lerp(ripcordOrigin, delta * retractSpeed)
 
