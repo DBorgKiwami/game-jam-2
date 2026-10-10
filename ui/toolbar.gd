@@ -1,8 +1,16 @@
 extends CanvasLayer
 
+@onready var player_reference : Car = get_tree().get_first_node_in_group("player")
+@onready var steering_wheel: TextureRect = $ToolbarAndWheel/SteeringWheel
+
 func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
 	SignalBus.connect("part_repaired", _fix_part)
+
+func _process(delta: float) -> void:
+	var half_pi = PI * 0.5
+	var rotation = remap(player_reference.turningSpeed, -player_reference.maxTurnSpeed, player_reference.maxTurnSpeed, -half_pi, half_pi)
+	steering_wheel.offset_transform_rotation = rotation
 
 # broken part signal received: enable respective button
 #func _break_part(index : int):

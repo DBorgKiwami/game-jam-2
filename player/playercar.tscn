@@ -47,7 +47,7 @@ scale_max = 0.01
 color = Color(0, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_axjsj")
 
-[node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint")]
+[node name="Car" type="CharacterBody2D" unique_id=2090852087 node_paths=PackedStringArray("sprite", "particleEffectPivotPoint") groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_wwgfg")
 maxSpeed = 500.0
