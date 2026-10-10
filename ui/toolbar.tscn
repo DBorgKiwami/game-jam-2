@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://images/car_long_black_04.png" id="2_h6tbp"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
+[ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
@@ -87,7 +88,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Tool4" type="TextureButton" parent="ToolbarAndWheel/Toolbar/BtnContainer" unique_id=752578682]
-visible = false
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
@@ -128,7 +128,11 @@ visible = false
 [node name="Testminigame2" parent="MinigameContainer" unique_id=479206221 instance=ExtResource("2_gb7al")]
 visible = false
 
+[node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
+visible = false
+
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool1" to="." method="_on_tool_1_pressed"]
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool2" to="." method="_on_tool_2_pressed"]
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool3" to="." method="_on_tool_3_pressed"]
+[connection signal="pressed" from="ToolbarAndWheel/Toolbar/BtnContainer/Tool4" to="." method="_on_tool_4_pressed"]

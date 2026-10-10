@@ -37,3 +37,8 @@ func _on_tool_2_pressed() -> void:
 func _on_tool_3_pressed() -> void:
 	$MinigameContainer/Radio.visible = true
 	pass # Replace with function body.
+
+
+func _on_tool_4_pressed() -> void:
+	$MinigameContainer/Engine.visible = true
+	pass # Replace with function body.
