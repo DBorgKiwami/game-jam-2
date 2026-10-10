@@ -13,6 +13,9 @@ var minus = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	number1 = randi_range(1,9)
+	number2 = randi_range(0,9)
+	inputNumber = randi_range(0,9)
 	pass # Replace with function body.
 
 
