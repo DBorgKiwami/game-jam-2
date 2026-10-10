@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dws7xuqu0hx5"]
 
+[ext_resource type="Script" uid="uid://y7krux70l706" path="res://minigames/engines.gd" id="1_5yjff"]
 [ext_resource type="Texture2D" uid="uid://bkjwdkc7h1jsb" path="res://images/ripcord section.png" id="1_nyicb"]
 [ext_resource type="Texture2D" uid="uid://bxb37eekn4761" path="res://images/ripcord.png" id="2_5yjff"]
+[ext_resource type="Texture2D" uid="uid://cqxvl2dhtpspw" path="res://particles/disc.png" id="4_l13bh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 38.0
+height = 128.0
 
 [node name="Engine" type="Node2D" unique_id=1211425801]
+script = ExtResource("1_5yjff")
+retractSpeed = 2.75
+requiredDistance = 300.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1237387902]
 z_index = -1
@@ -26,10 +35,45 @@ position = Vector2(-248.00002, -7)
 scale = Vector2(2.2734375, 2.2734375)
 texture = ExtResource("1_nyicb")
 
+[node name="Start Point" type="Marker2D" parent="Ripcord Hole" unique_id=721728511]
+position = Vector2(-34.205, 19.27)
+
 [node name="Ripcord" type="Sprite2D" parent="." unique_id=320577991]
+z_index = 1
 position = Vector2(-289, 17)
 texture = ExtResource("2_5yjff")
 
-[node name="Marker2D" type="Marker2D" parent="Ripcord" unique_id=412955871]
+[node name="End Point" type="Marker2D" parent="Ripcord" unique_id=412955871]
+position = Vector2(-31.425, 19.81)
 
-[node name="Line2D" type="Line2D" parent="." unique_id=1049438940]
+[node name="Area2D" type="Area2D" parent="Ripcord" unique_id=42330850]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ripcord/Area2D" unique_id=637763526]
+position = Vector2(13, 19)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Cord" type="Line2D" parent="." unique_id=1049438940]
+default_color = Color(0.10524041, 0.10524041, 0.1052404, 1)
+
+[node name="Light Indicators" type="Node2D" parent="." unique_id=1311697230]
+
+[node name="Sprite2D" type="Sprite2D" parent="Light Indicators" unique_id=569728573]
+modulate = Color(1, 0, 0.019607844, 1)
+position = Vector2(-103.999985, -219.00002)
+scale = Vector2(0.3242187, 0.3242187)
+texture = ExtResource("4_l13bh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Light Indicators" unique_id=982011690]
+modulate = Color(1, 0.003921569, 0, 1)
+position = Vector2(75, -219.00002)
+scale = Vector2(0.3242187, 0.3242187)
+texture = ExtResource("4_l13bh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Light Indicators" unique_id=788550353]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(254.00002, -219.00002)
+scale = Vector2(0.3242187, 0.3242187)
+texture = ExtResource("4_l13bh")
+
+[connection signal="mouse_entered" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_exited"]
