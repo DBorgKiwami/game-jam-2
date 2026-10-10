@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c5xku7oeeh1x8"]
 
 [ext_resource type="Script" uid="uid://budfmf280kc3p" path="res://minigames/heater.gd" id="1_7sknv"]
-[ext_resource type="Texture2D" uid="uid://m8ty88gl8i8o" path="res://temperature dial.png" id="1_ekvbm"]
-[ext_resource type="Texture2D" uid="uid://cluwljeotpgkl" path="res://temperature gauge.png" id="2_7sknv"]
+[ext_resource type="Texture2D" uid="uid://m8ty88gl8i8o" path="res://images/temperature dial.png" id="1_ekvbm"]
+[ext_resource type="Texture2D" uid="uid://cluwljeotpgkl" path="res://images/temperature gauge.png" id="2_7sknv"]
 [ext_resource type="Script" uid="uid://tx8hy5ee3oe4" path="res://minigames/dial.gd" id="3_m7hpl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]

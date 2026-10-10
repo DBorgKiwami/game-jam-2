@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c0q51j3dsg355"]
 
 [ext_resource type="Script" uid="uid://cd12wh8511d8i" path="res://minigames/radio.gd" id="1_52d37"]
-[ext_resource type="Texture2D" uid="uid://d20wujofet7ma" path="res://radio dial.png" id="2_htwsd"]
-[ext_resource type="Texture2D" uid="uid://c81eclii8d1qb" path="res://radio gague.png" id="3_pij3h"]
+[ext_resource type="Texture2D" uid="uid://d20wujofet7ma" path="res://images/radio dial.png" id="2_htwsd"]
+[ext_resource type="Texture2D" uid="uid://c81eclii8d1qb" path="res://images/radio gague.png" id="3_pij3h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 107.37784

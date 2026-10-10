@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81eclii8d1qb"
-path="res://.godot/imported/radio gague.png-24fdb18df0fe15df89bd5608c375fd33.ctex"
+uid="uid://cutcbvyemtb80"
+path="res://.godot/imported/car_long_black_04.png-c316805d430a95cf1f51d323003fb1b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://radio gague.png"
-dest_files=["res://.godot/imported/radio gague.png-24fdb18df0fe15df89bd5608c375fd33.ctex"]
+source_file="res://images/car_long_black_04.png"
+dest_files=["res://.godot/imported/car_long_black_04.png-c316805d430a95cf1f51d323003fb1b0.ctex"]
 
 [params]
 

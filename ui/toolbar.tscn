@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bkhavqi0ynfy4"]
 
 [ext_resource type="Script" uid="uid://cry37rui407f3" path="res://ui/toolbar.gd" id="1_ata6n"]
-[ext_resource type="Texture2D" uid="uid://wviha2wioqlf" path="res://fsos.png" id="1_gb7al"]
-[ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://icon.svg" id="2_ata6n"]
+[ext_resource type="Texture2D" uid="uid://wviha2wioqlf" path="res://images/fsos.png" id="1_gb7al"]
+[ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://images/icon.svg" id="2_ata6n"]
 [ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
-[ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://car_long_black_04.png" id="2_h6tbp"]
+[ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://images/car_long_black_04.png" id="2_h6tbp"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
 

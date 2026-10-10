@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8ty88gl8i8o"
-path="res://.godot/imported/temperature dial.png-3cf7c9b2c566eb1330433291102faf51.ctex"
+uid="uid://4q1tyunoecpq"
+path="res://.godot/imported/car_long_black_12.png-49308bd6da89d8081122920234c3ed8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temperature dial.png"
-dest_files=["res://.godot/imported/temperature dial.png-3cf7c9b2c566eb1330433291102faf51.ctex"]
+source_file="res://images/car_long_black_12.png"
+dest_files=["res://.godot/imported/car_long_black_12.png-49308bd6da89d8081122920234c3ed8c.ctex"]
 
 [params]
 

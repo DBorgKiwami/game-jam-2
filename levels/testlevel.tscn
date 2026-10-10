@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3k3orsewelgp" path="res://player/playercar.tscn" id="1_04qlu"]
 [ext_resource type="PackedScene" uid="uid://bkhavqi0ynfy4" path="res://ui/toolbar.tscn" id="1_hb8io"]
-[ext_resource type="Texture2D" uid="uid://ccirfl0vqb1ib" path="res://tall_handheld.png" id="1_mvx7d"]
+[ext_resource type="Texture2D" uid="uid://ccirfl0vqb1ib" path="res://images/tall_handheld.png" id="1_mvx7d"]
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 

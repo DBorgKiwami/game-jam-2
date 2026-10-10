@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3k3orsewelgp"]
 
 [ext_resource type="Script" uid="uid://cqfubgg54yyu5" path="res://player/player.gd" id="1_wwgfg"]
-[ext_resource type="Texture2D" uid="uid://4q1tyunoecpq" path="res://car_long_black_12.png" id="2_outkj"]
+[ext_resource type="Texture2D" uid="uid://4q1tyunoecpq" path="res://images/car_long_black_12.png" id="2_outkj"]
 [ext_resource type="Texture2D" uid="uid://c8jc85cs4mntf" path="res://particles/smoke.png" id="3_outkj"]
 [ext_resource type="Texture2D" uid="uid://wu8ay8iah7mp" path="res://particles/square.png" id="4_axjsj"]
 
