@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bl4vjqa80jcv6"]
+
+[ext_resource type="Script" uid="uid://cw6sbxejvryul" path="res://levels/housescript.gd" id="1_0bg5l"]
+[ext_resource type="Texture2D" uid="uid://bdq4jvb1enysr" path="res://images/house1.png" id="1_4khaa"]
+[ext_resource type="Texture2D" uid="uid://2ak37u513tqe" path="res://images/house2.png" id="2_0bg5l"]
+[ext_resource type="Texture2D" uid="uid://drjtc5xc0u21o" path="res://images/house3.png" id="3_srnql"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0kak"]
+radius = 280.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4khaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0bg5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_srnql")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4khaa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bg5l"]
+bg_color = Color(0.16862746, 0.70980394, 0, 1)
+
+[node name="House" type="Node2D" unique_id=696121312]
+script = ExtResource("1_0bg5l")
+
+[node name="House Area" type="Area2D" parent="." unique_id=973758840]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House Area" unique_id=1637909849]
+shape = SubResource("CircleShape2D_l0kak")
+
+[node name="House Sprite" type="AnimatedSprite2D" parent="." unique_id=1043248419]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.5414319
+
+[node name="Timer" type="Timer" parent="." unique_id=9875488]
+wait_time = 5.0
+one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1161045195]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -197.0
+offset_right = 100.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_4khaa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0bg5l")
+max_value = 5.0
+show_percentage = false
+
+[connection signal="body_entered" from="House Area" to="." method="_on_house_area_body_entered"]
+[connection signal="body_exited" from="House Area" to="." method="_on_house_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

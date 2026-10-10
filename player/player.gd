@@ -26,8 +26,12 @@ var inStorm = false
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
 
-#func _ready() -> void:
+func _ready() -> void:
+	SignalBus.connect("reached_house", victory)
 	#SignalBus.connect("broken_part", _break_part)
+
+func victory():
+	print("Your Win!")
 
 #func _break_part(index : int):
 	#print("part broken!", index)
