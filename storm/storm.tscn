@@ -1,18 +1,33 @@
 [gd_scene format=3 uid="uid://pw02kfhir1h5"]
 
 [ext_resource type="Script" uid="uid://clu7pfraftlek" path="res://storm/storm.gd" id="1_77wy8"]
+[ext_resource type="Shader" uid="uid://c5m4raj5idvg0" path="res://storm/storm.gdshader" id="2_uhs3t"]
+[ext_resource type="Texture2D" uid="uid://wu8ay8iah7mp" path="res://particles/square.png" id="3_uhs3t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1v4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jc1j"]
+shader = ExtResource("2_uhs3t")
+shader_parameter/circle_size = 0.0450000021375
+shader_parameter/border_size = 0.046000002185
+shader_parameter/ratio_width = 1.0
+shader_parameter/ratio_height = 1.0
 
 [node name="Storm" type="Area2D" unique_id=1438828153]
 z_index = 10
 scale = Vector2(2000, 2000)
 script = ExtResource("1_77wy8")
-shrinkSpeed = 10.0
+shrinkSpeed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760887716]
 shape = SubResource("CircleShape2D_x1v4d")
 debug_color = Color(0.9962091, 0, 0.1996977, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=663391082]
+texture_filter = 2
+material = SubResource("ShaderMaterial_2jc1j")
+scale = Vector2(0.432, 0.432)
+texture = ExtResource("3_uhs3t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
