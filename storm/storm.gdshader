@@ -13,8 +13,12 @@ void fragment() {
 	
 	float mask = step(circle_size, dist);
 	float borderMask = step(border_size, dist);
+	float stormBorderWall = mask-borderMask;
 	float act = mask - borderMask;
-	COLOR.rgb = vec3(mask-borderMask, borderMask, 0.0);
-	COLOR.a = mask;
+	//COLOR.rgba = vec4(1.0) * borderMask;
+	COLOR.rgba = vec4(1.0) * stormBorderWall;
+	//COLOR.rgb = vec3(0.0, 0.2, 1.0) * borderMask;
+	//COLOR.rgb = vec3(stormBorderWall, borderMask, 0.0);
+	//COLOR.a = mask;
 	//COLOR.a = (1.0 - mask);
 }
