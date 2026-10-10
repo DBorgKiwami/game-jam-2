@@ -19,6 +19,7 @@ config/icon="uid://wviha2wioqlf"
 
 SignalBus="*uid://c4gmx3bj0nt45"
 CarStats="*uid://d0glklfbyrpy5"
+PlayerStats="*uid://c07dajsbqyppa"
 
 [display]
 
