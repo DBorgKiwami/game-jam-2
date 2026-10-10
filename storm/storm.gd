@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	scale -= (Vector2.ONE * shrinkSpeed) * delta
+	scale = clamp(Vector2(50, 50), scale, Vector2 (2000, 2000))
 	#print(scale)
 
 func _on_body_exited(body: Node2D) -> void:
