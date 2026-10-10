@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
 [ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://images/car_long_black_04.png" id="2_h6tbp"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
+[ext_resource type="Texture2D" uid="uid://biaoop45bdjv0" path="res://images/steeringwheel.png" id="5_m6d4s"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
 
@@ -108,7 +109,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 offset_transform_enabled = true
-texture = ExtResource("2_ata6n")
+texture = ExtResource("5_m6d4s")
 expand_mode = 1
 stretch_mode = 4
 
