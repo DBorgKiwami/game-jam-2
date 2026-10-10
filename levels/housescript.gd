@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if !timer.is_stopped():
-		print("AAAAAAAAAAAA")
 		progressBar.value = 5.0 - timer.time_left
 
 func _on_house_area_body_entered(body: Node2D) -> void:
