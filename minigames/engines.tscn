@@ -12,6 +12,7 @@ height = 128.0
 [node name="Engine" type="Node2D" unique_id=1211425801]
 script = ExtResource("1_5yjff")
 retractSpeed = 2.75
+requiredDistance = 300.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1237387902]
 z_index = -1

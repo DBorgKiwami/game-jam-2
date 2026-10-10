@@ -7,6 +7,7 @@ extends Node2D
 @onready var lightIndicators : Node2D = $"Light Indicators"
 
 @export var retractSpeed : float = 1.0
+@export var requiredDistance : float = 500.0
 
 var ripcordOrigin
 var rips = 0
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("left_click"):
 		beingClicked = false
 		ripcord.rotation = 0
-		if ripcord.position.distance_to(ripcordOrigin) > 500:
+		if ripcord.position.distance_to(ripcordOrigin) > requiredDistance:
 			#print("Ripped")
 			#print(ripcord.position.distance_to(ripcordOrigin))
 			ripped()
