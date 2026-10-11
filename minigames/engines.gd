@@ -35,7 +35,8 @@ func _physics_process(delta: float) -> void:
 			#print(ripcord.position.distance_to(ripcordOrigin))
 			ripped()
 		else:
-			$Bad.playing = true
+			if visible:
+				$Bad.playing = true
 		beingClicked = false
 		ripcord.rotation = 0
 	if !beingClicked:
@@ -43,6 +44,7 @@ func _physics_process(delta: float) -> void:
 
 func ripped():
 	$Good.playing = true
+	$"Ripcord Hole/GPUParticles2D".emitting = true
 	rips = rips + 1
 	for i in range(rips % 3):
 		lightIndicators.get_child(i).modulate = Color(0,255,0)

@@ -20,7 +20,6 @@ shrinkSpeed = 50.0
 
 [node name="Car" parent="." unique_id=2090852087 instance=ExtResource("1_04qlu")]
 position = Vector2(1004, 510)
-rotation = -2.8331912
 
 [node name="DirtTexture" type="Sprite2D" parent="." unique_id=1659279530]
 visible = false
