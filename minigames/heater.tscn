@@ -4,13 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://m8ty88gl8i8o" path="res://images/temperature dial.png" id="1_ekvbm"]
 [ext_resource type="Texture2D" uid="uid://cluwljeotpgkl" path="res://images/temperature gauge.png" id="2_7sknv"]
 [ext_resource type="Script" uid="uid://tx8hy5ee3oe4" path="res://minigames/dial.gd" id="3_m7hpl"]
+[ext_resource type="Texture2D" uid="uid://bnd1yi8ocmatr" path="res://images/heatvent.png" id="5_jmf0s"]
+[ext_resource type="Texture2D" uid="uid://buob13y6iuwx7" path="res://images/fan gauge.png" id="6_rxhv1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 102.396286
 
-[node name="Heater" type="Node2D" unique_id=1334399775 node_paths=PackedStringArray("dial")]
+[node name="Heater" type="Node2D" unique_id=1334399775 node_paths=PackedStringArray("tempdial", "fandial")]
 script = ExtResource("1_7sknv")
-dial = NodePath("Temperature Dial")
+tempdial = NodePath("Temperature Dial")
+fandial = NodePath("Fan Dial")
 
 [node name="Temperature Dial" type="Sprite2D" parent="." unique_id=1659047644]
 modulate = Color(1, 0.87058824, 1, 1)
@@ -45,5 +48,29 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Vent" type="Sprite2D" parent="." unique_id=477093279]
+position = Vector2(-37, 0)
+texture = ExtResource("5_jmf0s")
+
+[node name="Fan Dial" type="Sprite2D" parent="." unique_id=1665662158]
+position = Vector2(236, 0)
+rotation = 1.5707964
+texture = ExtResource("1_ekvbm")
+script = ExtResource("3_m7hpl")
+flip_rotation = true
+upperBound = 122
+lowerBound = 45
+
+[node name="Area2D" type="Area2D" parent="Fan Dial" unique_id=1812197610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fan Dial/Area2D" unique_id=1073870184]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Fan Gauge" type="Sprite2D" parent="." unique_id=1962270022]
+position = Vector2(244, 0)
+texture = ExtResource("6_rxhv1")
+
 [connection signal="mouse_entered" from="Temperature Dial/Area2D" to="Temperature Dial" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Temperature Dial/Area2D" to="Temperature Dial" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Fan Dial/Area2D" to="Fan Dial" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Fan Dial/Area2D" to="Fan Dial" method="_on_area_2d_mouse_exited"]

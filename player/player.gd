@@ -14,6 +14,7 @@ var offroad := false
 @export var deceleration : float = 30.0
 @export var brakingAccel : float = 5.0
 @export var brakingDecel : float = 50.0
+@export var crashSpeedMultiplier : float = 0.1
 
 @export var turnAccel : float = 1.0
 @export var turnDeccel : float = 4.0
@@ -28,9 +29,13 @@ var forwardSpeed : float = 0
 var turningSpeed : float = 0
 
 @onready var dirt_texture: Sprite2D = $"../DirtTexture"
-#func _ready() -> void:
-	#dirt_texture.modulate.a = 0.0
+
+func _ready() -> void:
+	SignalBus.connect("reached_house", victory)
 	#SignalBus.connect("broken_part", _break_part)
+
+func victory():
+	print("Your Win!")
 
 #func _break_part(index : int):
 	#print("part broken!", index)
@@ -102,6 +107,8 @@ func _physics_process(delta: float) -> void:#
 		turningSpeed = clampf((turningSpeed - (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
 	elif Input.is_action_pressed("turn_right") and CarStats.car_parts["wheel"]:
 		turningSpeed = clampf((turningSpeed + (activeTurnAccel * delta)), -maxTurnSpeed, maxTurnSpeed)
+	elif !CarStats.car_parts["wheel"]:
+		pass
 	else:
 		if turningSpeed < 0:
 			turningSpeed = clampf((turningSpeed + (activeTurnDecel * delta)), -maxTurnSpeed, maxTurnSpeed)
@@ -127,7 +134,9 @@ func _physics_process(delta: float) -> void:#
 	# Call rotating function
 	
 	rotating(delta)
-	move_and_slide()
+	var crashed = move_and_slide()
+	if crashed:
+		forwardSpeed *= crashSpeedMultiplier
 	#print($Timer.time_left)
 	#print(velocity)
 

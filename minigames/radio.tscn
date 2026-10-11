@@ -7,6 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 107.37784
 
+[sub_resource type="SystemFont" id="SystemFont_pij3h"]
+font_names = PackedStringArray("Courier New")
+
 [node name="Radio" type="Node2D" unique_id=1467513764]
 script = ExtResource("1_52d37")
 
@@ -45,10 +48,25 @@ mouse_filter = 2
 [node name="Label" type="Label" parent="." unique_id=832022817]
 offset_left = -308.13
 offset_top = -232.98
-offset_right = -268.13
-offset_bottom = -209.97998
+offset_right = -1.1300049
+offset_bottom = -86.979996
+theme_override_fonts/font = SubResource("SystemFont_pij3h")
 theme_override_font_sizes/font_size = 128
 text = "15.?"
+
+[node name="ColorRect" type="ColorRect" parent="Label" unique_id=372593105]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.869995
+offset_top = -11.020004
+offset_right = 70.29001
+offset_bottom = 8.809998
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9785295, 0.45593286, 0, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=2092151379]
 process_callback = 0

@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var player_reference : Car = get_tree().get_first_node_in_group("player")
+@onready var steering_wheel: TextureRect = $ToolbarAndWheel/SteeringWheel
+
 func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
 	SignalBus.connect("part_repaired", _fix_part)
@@ -11,6 +14,11 @@ func _on_tool_pressed(tool_index : int):
 	close_all_tabs()
 	var mg := $MinigameContainer.get_child(tool_index)
 	mg.visible = true
+
+func _process(delta: float) -> void:
+	var half_pi = PI * 0.5
+	var rotation = remap(player_reference.turningSpeed, -player_reference.maxTurnSpeed, player_reference.maxTurnSpeed, -half_pi, half_pi)
+	steering_wheel.offset_transform_rotation = rotation
 
 # fixed part signal received: disable respective button and minigame
 func _fix_part(index : int):
@@ -24,3 +32,4 @@ func _on_return_pressed() -> void:
 func close_all_tabs() -> void:
 	for mg in $MinigameContainer.get_children():
 		mg.visible = false
+

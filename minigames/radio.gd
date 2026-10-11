@@ -3,7 +3,7 @@ extends Node2D
 var dialHasMouse = false
 var beingClicked = false
 var number1 = 1
-var number2 = 4
+var number2 = 9
 var inputNumber = 2
 var turnDistance = 0
 var minus = false
@@ -13,6 +13,9 @@ var minus = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	number1 = randi_range(1,9)
+	number2 = randi_range(0,9)
+	inputNumber = randi_range(0,9)
 	pass # Replace with function body.
 
 
@@ -51,7 +54,7 @@ func _physics_process(delta: float) -> void:
 			if wrap(number1 + number2, 0, 10) == inputNumber:
 				if timer.is_stopped():
 					timer.start()
-				print("Correct, Erect")
+				#print("Correct, Erect")
 			else:
 				timer.stop()
 		else:
@@ -66,5 +69,7 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	print("Hi")
 	SignalBus.emit_signal("part_repaired", CarStats.car_part.RADIO)
-	inputNumber = 2
+	number1 = randi_range(1,9)
+	number2 = randi_range(0,9)
+	inputNumber = randi_range(0,9)
 	pass # Replace with function body.
