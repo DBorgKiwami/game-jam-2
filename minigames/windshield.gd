@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 func _on_fog_area_2d_entered(area: Area2D) -> void:
 	if visible and CarStats.clearing_windshield:
 		if fog_tween: fog_tween.kill()
-		var target = fog_reference.modulate.a - 0.05
+		var target = clamp(fog_reference.modulate.a - 0.05, 0., 1.)
 		fog_tween = create_tween()
 		fog_tween.tween_property(fog_reference, "modulate:a", target, 0.1)
 		print("clearing fog ", target)

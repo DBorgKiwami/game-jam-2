@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bkhavqi0ynfy4"]
 
 [ext_resource type="Script" uid="uid://cry37rui407f3" path="res://ui/toolbar.gd" id="1_ata6n"]
+[ext_resource type="Texture2D" uid="uid://b0kj2etea1f42" path="res://images/backbutton.png" id="2_62suo"]
 [ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://images/icon.svg" id="2_ata6n"]
 [ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
-[ext_resource type="Texture2D" uid="uid://c3yfy700s01i7" path="res://particles/sweep.png" id="2_wcfn2"]
 [ext_resource type="Texture2D" uid="uid://byqvtcb4togeo" path="res://images/engineiconwhite.png" id="3_62suo"]
 [ext_resource type="Texture2D" uid="uid://ct264gf34ey25" path="res://images/tool-btns/flat_tire.png" id="5_62suo"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
@@ -46,7 +46,7 @@ offset_left = -24.0
 offset_top = -67.0
 offset_right = 56.0
 offset_bottom = 13.0
-texture_normal = ExtResource("2_wcfn2")
+texture_normal = ExtResource("2_62suo")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -140,5 +140,6 @@ visible = false
 visible = false
 
 [node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
+visible = false
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
