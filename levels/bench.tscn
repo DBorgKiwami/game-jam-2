@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://frcemd4seoc6"]
+
+[ext_resource type="Texture2D" uid="uid://jklpcpiekh24" path="res://images/bench.png" id="1_yxvne"]
+[ext_resource type="Texture2D" uid="uid://dhl5wm4wi4w2j" path="res://images/dropshadow.png" id="2_ysegp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(165.5, 68)
+
+[node name="Bench" type="Sprite2D" unique_id=961763259]
+texture = ExtResource("1_yxvne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=12367875]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1323748260]
+position = Vector2(6, 66)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806104983]
+z_index = -1
+position = Vector2(-1, 24)
+texture = ExtResource("2_ysegp")
