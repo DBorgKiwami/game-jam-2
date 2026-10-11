@@ -5,6 +5,7 @@ extends CanvasLayer
 var buttons
 var buttonsIndicators = []
 var timeElapsed = 0
+@onready var minigame_label: Label = $MinigameContainer/MinigameLabel
 
 func _on_break(index):
 	#print(index)
@@ -36,6 +37,9 @@ func _on_tool_pressed(tool_index : int):
 	close_all_tabs()
 	var mg := $MinigameContainer.get_child(tool_index)
 	mg.visible = true
+	if PlayerStats.minigame_completion[tool_index] != "":
+		minigame_label.text = PlayerStats.minigame_completion[tool_index]
+		minigame_label.visible = true
 
 func _process(delta: float) -> void:
 	timeElapsed += delta
@@ -55,6 +59,7 @@ func _fix_part(index : int):
 	close_all_tabs()
 	buttons[index].modulate = Color(0, 0, 0)
 	buttonsIndicators[index] = false
+	PlayerStats.minigame_completion[index] = ""
 
 # return btn closes current/all minigame panel(s)
 func _on_return_pressed() -> void:

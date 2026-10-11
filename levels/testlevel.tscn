@@ -13,7 +13,6 @@
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 
 [node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
-visible = false
 shrinkSpeed = 50.0
 
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]

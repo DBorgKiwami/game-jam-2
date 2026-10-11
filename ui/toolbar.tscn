@@ -154,4 +154,14 @@ visible = false
 [node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
 visible = false
 
+[node name="MinigameLabel" type="Label" parent="MinigameContainer" unique_id=845747395]
+custom_minimum_size = Vector2(900, 200)
+custom_maximum_size = Vector2(900, 200)
+offset_left = -527.38745
+offset_top = -348.51248
+offset_right = 372.61255
+offset_bottom = -148.51248
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
