@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bqjqy60sd7506"]
+
+[ext_resource type="PackedScene" uid="uid://df2gph2avuxlv" path="res://levels/noise_color_rect.tscn" id="1_mpi2i"]
+[ext_resource type="Shader" uid="uid://kqpey4lrr17l" path="res://levels/pixelate.gdshader" id="2_sh87e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7kwa"]
+shader = ExtResource("2_sh87e")
+shader_parameter/amount = 0.499999988824
+shader_parameter/speed = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=942157107]
+layer = 0
+
+[node name="ColorRect" parent="." unique_id=740530532 instance=ExtResource("1_mpi2i")]
+material = SubResource("ShaderMaterial_v7kwa")

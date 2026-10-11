@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://df2gph2avuxlv"]
+
+[ext_resource type="Shader" uid="uid://kqpey4lrr17l" path="res://levels/pixelate.gdshader" id="1_q3dhg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw7t4"]
+shader = ExtResource("1_q3dhg")
+shader_parameter/amount = 0.499999988824
+shader_parameter/speed = 1.0
+
+[node name="ColorRect" type="ColorRect" unique_id=740530532]
+z_index = 1
+material = SubResource("ShaderMaterial_jw7t4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

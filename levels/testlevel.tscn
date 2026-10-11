@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://frcemd4seoc6" path="res://levels/bench.tscn" id="16_hnalp"]
 [ext_resource type="PackedScene" uid="uid://dqqlr03dm1s1" path="res://levels/grocery_store.tscn" id="17_kam1y"]
 [ext_resource type="PackedScene" uid="uid://bweu00t7cgvrw" path="res://levels/drive_thru.tscn" id="18_ony54"]
+[ext_resource type="PackedScene" uid="uid://bqjqy60sd7506" path="res://levels/noise_canvas_layer.tscn" id="19_kam1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_766f2"]
 size = Vector2(210, 10374)
@@ -38,6 +39,8 @@ size = Vector2(158, 280)
 size = Vector2(8874.5, 172.75)
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
+
+[node name="CanvasLayer" parent="." unique_id=942157107 instance=ExtResource("19_kam1y")]
 
 [node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
 

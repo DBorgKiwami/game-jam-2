@@ -10,7 +10,3 @@ func _on_restart_button_pressed() -> void:
 func _ready() -> void:
 	CarStats.reset()
 	PlayerStats.reset()
-
-#func _process(delta: float) -> void:
-	#print("in game over process")
-	#print(PlayerStats.health)

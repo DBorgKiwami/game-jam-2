@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c3fxh2uaegfe6"]
 
+[ext_resource type="PackedScene" uid="uid://df2gph2avuxlv" path="res://levels/noise_color_rect.tscn" id="1_ecft6"]
 [ext_resource type="Texture2D" uid="uid://bvmwyebl4jni3" path="res://images/finalscene1.png" id="1_p7da5"]
 [ext_resource type="Texture2D" uid="uid://3d8853xua4eh" path="res://images/finalscene2.png" id="2_fokdw"]
 [ext_resource type="Texture2D" uid="uid://c3ewsullfohd4" path="res://images/finalscene3.png" id="3_hqgg6"]
@@ -134,8 +135,11 @@ subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_g4v7s"]
 font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
 
 [node name="Panel" type="CanvasLayer" unique_id=2095912444]
+
+[node name="ColorRect" parent="." unique_id=740530532 instance=ExtResource("1_ecft6")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=263709689]
 anchors_preset = 8

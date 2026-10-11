@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://vsj5pvmyjnb0"]
+
+[ext_resource type="Script" uid="uid://c7ox365gbyidg" path="res://levels/startgame.gd" id="1_7i5ox"]
+[ext_resource type="PackedScene" uid="uid://df2gph2avuxlv" path="res://levels/noise_color_rect.tscn" id="2_titkf"]
+[ext_resource type="Texture2D" uid="uid://dmcncdf36l43b" path="res://images/ending.png" id="3_a643a"]
+[ext_resource type="AudioStream" uid="uid://dnvrfjcc1p24e" path="res://soundeffects/music/endingsong.mp3" id="4_r38gh"]
+[ext_resource type="Texture2D" uid="uid://bxvris0871pj7" path="res://images/title_logo.png" id="5_titkf"]
+
+[node name="Startgame" type="CanvasLayer" unique_id=1099542677]
+script = ExtResource("1_7i5ox")
+
+[node name="ColorRect" parent="." unique_id=740530532 instance=ExtResource("2_titkf")]
+offset_top = -1.0
+offset_bottom = -1.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=263709689]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -586.0
+offset_top = -385.0
+offset_right = 494.0
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("3_a643a")
+
+[node name="Ending Song" type="AudioStreamPlayer2D" parent="." unique_id=1758688977]
+stream = ExtResource("4_r38gh")
+autoplay = true
+
+[node name="Title" type="TextureRect" parent="." unique_id=1874661211]
+offset_left = 481.0
+offset_top = 22.0
+offset_right = 993.0
+offset_bottom = 278.0
+texture = ExtResource("5_titkf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1017894260]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -493.0
+offset_top = 33.0
+offset_right = 573.0
+offset_bottom = 833.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Controls:
+W - Gas
+S - Reverse
+A,D - Steer
+Spacebar - Handbrake
+Mouse - Repairs
+
+If your heat bar runs out, game over!
+Crashing or Driving offroad will break your car faster!
+
+Click anywhere to begin :)"

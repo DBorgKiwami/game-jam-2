@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2xp2hrg8e5dg" path="res://levels/gameover.gd" id="1_g5c8h"]
 [ext_resource type="Texture2D" uid="uid://dmcncdf36l43b" path="res://images/ending.png" id="1_owe7a"]
+[ext_resource type="PackedScene" uid="uid://df2gph2avuxlv" path="res://levels/noise_color_rect.tscn" id="2_5g8mi"]
 [ext_resource type="AudioStream" uid="uid://dnvrfjcc1p24e" path="res://soundeffects/music/endingsong.mp3" id="4_wk6ut"]
 
 [sub_resource type="SystemFont" id="SystemFont_yf5fn"]
@@ -10,6 +11,8 @@ subpixel_positioning = 0
 
 [node name="GameOver" type="CanvasLayer" unique_id=1099542677]
 script = ExtResource("1_g5c8h")
+
+[node name="ColorRect" parent="." unique_id=740530532 instance=ExtResource("2_5g8mi")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=263709689]
 anchors_preset = 8
@@ -27,6 +30,7 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("1_owe7a")
 
 [node name="RestartButton" type="Button" parent="." unique_id=966130887]
+z_index = 10
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
