@@ -15,9 +15,12 @@ var car_parts := {
 	#"aerial" = true
 }
 
+var clearing_windshield := false
+
 # called from player/car script when timer sets off
 func break_something():
 	#var part_to_break = car_parts.keys()[4] # HARDCODE
+	
 	# check from parts still intact
 	var intact = car_parts.keys().filter(func(p): return car_parts[p])
 	# if all broken, just return

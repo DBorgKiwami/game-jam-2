@@ -7,6 +7,7 @@ var inStorm := false
 var offroad := false
 @onready var engineAudio : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@onready var fog_reference : ColorRect = get_tree().get_first_node_in_group("fog")
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
 @export var maxTurnSpeed : float = 2.0
@@ -29,8 +30,6 @@ var offroad := false
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
 
-@onready var dirt_texture: Sprite2D = $"../DirtTexture"
-
 func _ready() -> void:
 	SignalBus.connect("reached_house", victory)
 	#SignalBus.connect("broken_part", _break_part)
@@ -51,18 +50,20 @@ func rotating(delta: float):
 	
 # Decrease player health/warm if in storm or heater is off
 var t := 0.0
+var fog_tween: Tween
 func _process(delta: float) -> void:
 	t = delta * 0.025
 	if inStorm or !CarStats.car_parts["heating"]:
 		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)
 	else:
 		PlayerStats.health = lerp(PlayerStats.health, 100.0, t)
-	if !CarStats.car_parts["windshield"]:
-		dirt_texture.modulate.a = 1.0
-		#dirt_texture.modulate.a = lerp(dirt_texture.modulate.a, 1.0, t)
-	else:
-		dirt_texture.modulate.a = 0.0
-		#dirt_texture.modulate.a = lerp(dirt_texture.modulate.a, 0.0, t)
+	# if windshield just broke and player hasnt started clearing, fog it up
+	if !CarStats.car_parts["windshield"] and !CarStats.clearing_windshield:
+		if fog_tween: fog_tween.kill()
+		var target = clamp(fog_reference.modulate.a + 0.05, 0.0, 1.0)
+		fog_tween = create_tween()
+		fog_tween.tween_property(fog_reference, "modulate:a", target, 0.1)
+
 		
 func _physics_process(delta: float) -> void:#
 	# Check if player is breaking

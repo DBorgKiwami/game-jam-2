@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6106asoa5w8s"]
+
+[ext_resource type="Shader" uid="uid://btvvot8svcmwx" path="res://levels/screen_shaders/fog.gdshader" id="1_71cki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6euoa"]
+shader = ExtResource("1_71cki")
+
+[node name="Fog" type="ColorRect" unique_id=4997018 groups=["fog"]]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_6euoa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5254902, 1, 1, 1)

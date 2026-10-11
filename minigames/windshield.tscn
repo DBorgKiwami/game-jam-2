@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ckcppo6kfrenh" path="res://minigames/windshield.gd" id="1_7pmbe"]
 [ext_resource type="Texture2D" uid="uid://chnevs7bbylrr" path="res://images/wind_shield.png" id="2_fqfgp"]
-[ext_resource type="Texture2D" uid="uid://dignekr3rbv8n" path="res://images/dirt_texture.png" id="3_7pmbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pmbe"]
-size = Vector2(505, 515)
+size = Vector2(772, 515)
 
 [node name="Windshield" type="Node2D" unique_id=1467513764]
 script = ExtResource("1_7pmbe")
@@ -14,7 +13,34 @@ l_shield_max_rot = 15
 r_shield_min_rot = 30
 r_shield_max_rot = 150
 
+[node name="Panel" type="Panel" parent="." unique_id=1473536304]
+z_index = -1
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fog" type="Sprite2D" parent="." unique_id=1711576771]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(12, -99)
+
+[node name="Area2D" type="Area2D" parent="Fog" unique_id=874138189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fog/Area2D" unique_id=2033265881]
+position = Vector2(134, -5.5)
+shape = SubResource("RectangleShape2D_7pmbe")
+
 [node name="Windshield Interactibles" type="Node2D" parent="." unique_id=1100404298]
+z_index = 5
 position = Vector2(-671, -222)
 
 [node name="LWindShield" type="Sprite2D" parent="Windshield Interactibles" unique_id=1418928990]
@@ -48,35 +74,8 @@ visible = false
 position = Vector2(-379.2207, 314.28552)
 polygon = PackedVector2Array(-705.5, -382.495, -705.5, -380.79498, -532.8, -369.395, -526.8, -369.395, -288.7, -287.395, -284.40002, -287.395, 13.599976, -81.39499, 17.599976, -81.39499, 82.5, 7.305023, 82.5, 10.305023, 108.599976, 28.605011, 121.69995, 28.605011, 100.5, 77.704956, 100.5, 85.704956, 25, 92.60498, 17.799988, 92.60498, -22.200012, 43.60501, -31.200012, 43.60501, -23.5, 11.805023, -237.79999, -149.39499, -240.90002, -149.39499, -298.5, -212.29501, -564.4, -253.39499, -571.4, -253.39499, -762.6, -326.895, -914.80005, -305.395, -923.4, -305.395, -933.4, -318.395, -945.69995, -318.395, -930.5, -348.79498, -930.5, -354.69498, -861.5, -376.69498, -861.5, -380.29498)
 
-[node name="Panel" type="Panel" parent="." unique_id=1473536304]
-z_index = -1
-custom_minimum_size = Vector2(1080, 720)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = -360.0
-offset_right = 540.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Fog" type="Sprite2D" parent="." unique_id=1711576771]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(12, -99)
-texture = ExtResource("3_7pmbe")
-
-[node name="Area2D" type="Area2D" parent="Fog" unique_id=874138189]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fog/Area2D" unique_id=2033265881]
-position = Vector2(0.5, -5.5)
-shape = SubResource("RectangleShape2D_7pmbe")
-
+[connection signal="area_entered" from="Fog/Area2D" to="." method="_on_fog_area_2d_entered"]
 [connection signal="mouse_entered" from="Windshield Interactibles/LWindShield/LWindShieldArea2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Windshield Interactibles/LWindShield/LWindShieldArea2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Windshield Interactibles/RWindShield/RWindShieldArea2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Windshield Interactibles/RWindShield/RWindShieldArea2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="area_entered" from="Fog/Area2D" to="." method="_on_fog_area_2d_entered"]

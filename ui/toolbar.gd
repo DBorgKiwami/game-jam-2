@@ -7,8 +7,8 @@ var buttonsIndicators = []
 var timeElapsed = 0
 
 func _on_break(index):
-	print(index)
-	print(buttonsIndicators)
+	#print(index)
+	#print(buttonsIndicators)
 	buttonsIndicators[index] = true
 	#var i = 0
 	#for part in CarStats.car_parts:
