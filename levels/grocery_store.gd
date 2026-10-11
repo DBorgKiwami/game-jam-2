@@ -22,4 +22,5 @@ func _on_house_area_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	SignalBus.emit_signal("reached_grocery_store")
+	PlayerStats.hasBeenToGroceryStore = true
 	pass # Replace with function body.

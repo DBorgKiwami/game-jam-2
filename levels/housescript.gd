@@ -18,8 +18,12 @@ func _on_house_area_body_entered(body: Node2D) -> void:
 func _on_house_area_body_exited(body: Node2D) -> void:
 	timer.stop()
 	progressBar.value = 0.0
+	$Label.visible = false
 	pass # Replace with function body.
 
 func _on_timer_timeout() -> void:
-	SignalBus.emit_signal("reached_house")
+	if PlayerStats.hasBeenToDriveThru and PlayerStats.hasBeenToGroceryStore:
+		SignalBus.emit_signal("reached_house")
+	else:
+		$Label.visible = true
 	pass # Replace with function body.

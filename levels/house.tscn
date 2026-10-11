@@ -33,6 +33,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bg5l"]
 bg_color = Color(0.16862746, 0.70980394, 0, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_g4v7s"]
+font_names = PackedStringArray("Calibri")
+
 [node name="House" type="Node2D" unique_id=696121312]
 script = ExtResource("1_0bg5l")
 
@@ -77,6 +80,16 @@ waypointOrder = 2
 position = Vector2(-2, -5)
 scale = Vector2(1.6953125, 1.6953125)
 texture = ExtResource("9_ndoe4")
+
+[node name="Label" type="Label" parent="." unique_id=462826103]
+visible = false
+offset_left = -350.0
+offset_top = -283.0
+offset_right = 566.0
+offset_bottom = -195.0
+theme_override_fonts/font = SubResource("SystemFont_g4v7s")
+theme_override_font_sizes/font_size = 64
+text = "I haven't done my other tasks"
 
 [connection signal="body_entered" from="House Area" to="." method="_on_house_area_body_entered"]
 [connection signal="body_exited" from="House Area" to="." method="_on_house_area_body_exited"]
