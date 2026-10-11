@@ -1,3 +1,4 @@
+// source: https://godotshaders.com/shader/simple-film-grain/
 shader_type canvas_item;
 
 uniform sampler2D screen_tex: hint_screen_texture;
