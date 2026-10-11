@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bqy7m0wp7b6a5"]
+
+[ext_resource type="Texture2D" uid="uid://c88lwa8h2dj5j" path="res://images/highrise1.png" id="1_jtm20"]
+[ext_resource type="Texture2D" uid="uid://dhl5wm4wi4w2j" path="res://images/dropshadow.png" id="2_jymsa"]
+[ext_resource type="Script" uid="uid://cjiuv0n7ppy44" path="res://levels/highrise.gd" id="2_ynon6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jymsa"]
+size = Vector2(139, 123)
+
+[node name="Highrise" type="Sprite2D" unique_id=140225898]
+z_index = 3
+texture = ExtResource("1_jtm20")
+script = ExtResource("2_ynon6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1333020522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=974927764]
+z_index = 3
+position = Vector2(-10.5, 154.5)
+shape = SubResource("RectangleShape2D_jymsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1020501656]
+z_index = -1
+position = Vector2(-9, 164)
+texture = ExtResource("2_jymsa")
