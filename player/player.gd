@@ -161,7 +161,7 @@ func _physics_process(delta: float) -> void:#
 	engineAudio.pitch_scale = remap(abs(forwardSpeed), 0, maxSpeed, 0.3, 1.0)
 
 func _on_timer_timeout() -> void:
-	#print("timer out!")
+	print("timer out!")
 	CarStats.break_something()
 
 func _on_level_area_2d_body_exited(body: Node2D) -> void:
