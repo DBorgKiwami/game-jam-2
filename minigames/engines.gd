@@ -34,12 +34,15 @@ func _physics_process(delta: float) -> void:
 			#print("Ripped")
 			#print(ripcord.position.distance_to(ripcordOrigin))
 			ripped()
+		else:
+			$Bad.playing = true
 		beingClicked = false
 		ripcord.rotation = 0
 	if !beingClicked:
 		ripcord.position = ripcord.position.lerp(ripcordOrigin, delta * retractSpeed)
 
 func ripped():
+	$Good.playing = true
 	rips = rips + 1
 	for i in range(rips % 3):
 		lightIndicators.get_child(i).modulate = Color(0,255,0)

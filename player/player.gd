@@ -33,13 +33,14 @@ var touchingObject = false
 
 func _ready() -> void:
 	SignalBus.connect("reached_house", victory)
-	#SignalBus.connect("broken_part", _break_part)
+	SignalBus.connect("broken_part", _break_part)
 
 func victory():
 	print("Your Win!")
 
-#func _break_part(index : int):
+func _break_part(index : int):
 	#print("part broken!", index)
+	$Broken.playing = true
 
 func _input(event: InputEvent) -> void:
 	pass

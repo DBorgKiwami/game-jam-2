@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bkjwdkc7h1jsb" path="res://images/ripcord section.png" id="1_nyicb"]
 [ext_resource type="Texture2D" uid="uid://bxb37eekn4761" path="res://images/ripcord.png" id="2_5yjff"]
 [ext_resource type="Texture2D" uid="uid://cqxvl2dhtpspw" path="res://particles/disc.png" id="4_l13bh"]
+[ext_resource type="AudioStream" uid="uid://2dsq3thloo1g" path="res://soundeffects/coin_4.wav" id="5_808hm"]
+[ext_resource type="AudioStream" uid="uid://pdk3tlk6gsef" path="res://soundeffects/power_down.wav" id="6_0oaf8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 38.0
@@ -74,6 +76,14 @@ modulate = Color(1, 0, 0, 1)
 position = Vector2(254.00002, -219.00002)
 scale = Vector2(0.3242187, 0.3242187)
 texture = ExtResource("4_l13bh")
+
+[node name="Good" type="AudioStreamPlayer2D" parent="." unique_id=1148736609]
+stream = ExtResource("5_808hm")
+volume_db = -4.0
+
+[node name="Bad" type="AudioStreamPlayer2D" parent="." unique_id=143102310]
+stream = ExtResource("6_0oaf8")
+volume_db = -3.0
 
 [connection signal="mouse_entered" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_exited"]
