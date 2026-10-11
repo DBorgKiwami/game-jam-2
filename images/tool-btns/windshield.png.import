@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqe5b1glr8l6n"
-path="res://.godot/imported/shield.png-721cf08c74b5bdc485d1da37fabf51db.ctex"
+uid="uid://btbra207x4ife"
+path="res://.godot/imported/windshield.png-8b26851278037d295dbd899b0d0978f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tool-btns/shield.png"
-dest_files=["res://.godot/imported/shield.png-721cf08c74b5bdc485d1da37fabf51db.ctex"]
+source_file="res://images/tool-btns/windshield.png"
+dest_files=["res://.godot/imported/windshield.png-8b26851278037d295dbd899b0d0978f3.ctex"]
 
 [params]
 
