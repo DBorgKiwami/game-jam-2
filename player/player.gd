@@ -5,6 +5,7 @@ var direction : Vector2 = Vector2.UP
 var directionBeforeBreak : Vector2 = Vector2.UP
 var inStorm := false
 var offroad := false
+@onready var engineAudio : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
@@ -139,6 +140,9 @@ func _physics_process(delta: float) -> void:#
 		forwardSpeed *= crashSpeedMultiplier
 	#print($Timer.time_left)
 	#print(velocity)
+	
+	engineAudio.volume_db = remap(abs(forwardSpeed), 0, maxSpeed, -60, -25)
+	engineAudio.pitch_scale = remap(abs(forwardSpeed), 0, maxSpeed, 0.3, 1.0)
 
 func _on_timer_timeout() -> void:
 	print("timer out!")
