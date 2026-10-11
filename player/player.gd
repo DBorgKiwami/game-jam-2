@@ -34,6 +34,7 @@ var touchingObject = false
 func _ready() -> void:
 	SignalBus.connect("reached_house", victory)
 	SignalBus.connect("broken_part", _break_part)
+	$Radio
 
 func victory():
 	print("Your Win!")
