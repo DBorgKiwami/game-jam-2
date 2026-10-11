@@ -32,4 +32,3 @@ func _on_return_pressed() -> void:
 func close_all_tabs() -> void:
 	for mg in $MinigameContainer.get_children():
 		mg.visible = false
-

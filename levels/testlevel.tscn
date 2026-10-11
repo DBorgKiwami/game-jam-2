@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://pw02kfhir1h5" path="res://storm/storm.tscn" id="1_t3dhk"]
 [ext_resource type="Texture2D" uid="uid://0al4tqwcq5xa" path="res://images/basic_level.png" id="3_hb8io"]
 [ext_resource type="Texture2D" uid="uid://b41nogyg4jk2m" path="res://images/level_area_mask.png" id="4_t3dhk"]
+[ext_resource type="PackedScene" uid="uid://bl4vjqa80jcv6" path="res://levels/house.tscn" id="5_8j3fl"]
 [ext_resource type="Texture2D" uid="uid://dignekr3rbv8n" path="res://images/dirt_texture.png" id="6_l0kak"]
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
@@ -39,6 +40,9 @@ polygon = PackedVector2Array(569, -230, 555, -234, 555, -235.5, 368.40002, -235.
 position = Vector2(33.000008, -24.999992)
 scale = Vector2(7.12, 7.12)
 texture = ExtResource("6_l0kak")
+
+[node name="House" parent="." unique_id=696121312 instance=ExtResource("5_8j3fl")]
+position = Vector2(1651, -572)
 
 [connection signal="body_entered" from="LevelArea2D" to="Car" method="_on_level_area_2d_body_entered"]
 [connection signal="body_exited" from="LevelArea2D" to="Car" method="_on_level_area_2d_body_exited"]

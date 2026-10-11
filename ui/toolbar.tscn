@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://eamlb36jllrw" path="res://images/tool-btns/engine.png" id="3_02ouf"]
 [ext_resource type="Texture2D" uid="uid://ct264gf34ey25" path="res://images/tool-btns/flat_tire.png" id="5_62suo"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
+[ext_resource type="Texture2D" uid="uid://biaoop45bdjv0" path="res://images/steeringwheel.png" id="5_m6d4s"]
 [ext_resource type="Texture2D" uid="uid://dfmy1gsth642i" path="res://images/tool-btns/heaterr.png" id="5_wcfn2"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
 [ext_resource type="Texture2D" uid="uid://bppdjmuo76a00" path="res://images/tool-btns/radio.png" id="6_62suo"]
@@ -111,7 +112,8 @@ stretch_mode = 5
 [node name="SteeringWheel" type="TextureRect" parent="ToolbarAndWheel" unique_id=304196981]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-texture = ExtResource("2_ata6n")
+offset_transform_enabled = true
+texture = ExtResource("5_m6d4s")
 expand_mode = 1
 stretch_mode = 4
 
