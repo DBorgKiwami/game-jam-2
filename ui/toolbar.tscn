@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wviha2wioqlf" path="res://images/fsos.png" id="1_gb7al"]
 [ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://images/icon.svg" id="2_ata6n"]
 [ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
-[ext_resource type="Texture2D" uid="uid://cutcbvyemtb80" path="res://images/car_long_black_04.png" id="2_h6tbp"]
+[ext_resource type="Texture2D" uid="uid://b0kj2etea1f42" path="res://images/backbutton.png" id="3_wcfn2"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
 [ext_resource type="Texture2D" uid="uid://biaoop45bdjv0" path="res://images/steeringwheel.png" id="5_m6d4s"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
@@ -24,9 +24,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 101.78003
+offset_left = 100.0
 offset_top = -250.0
-offset_right = 351.7802
+offset_right = 350.00018
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_i38vh")
@@ -61,7 +61,7 @@ offset_left = -24.0
 offset_top = -67.0
 offset_right = 56.0
 offset_bottom = 13.0
-texture_normal = ExtResource("2_h6tbp")
+texture_normal = ExtResource("3_wcfn2")
 ignore_texture_size = true
 stretch_mode = 5
 
