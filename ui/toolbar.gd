@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 	
 	for i in range(buttons.size()):
 		if buttonsIndicators[i]:
-			print(1.0 * wrapf(timeElapsed, 0.0, 1.0))
+			#print(1.0 * wrapf(timeElapsed, 0.0, 1.0))
 			buttons[i].modulate.r = 1.0 * wrapf(timeElapsed, 0.0, 1.0)
 
 # fixed part signal received: disable respective button and minigame
