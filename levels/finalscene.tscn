@@ -87,10 +87,10 @@ tracks/1/path = NodePath("Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 10, 90),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["", "Still Beats Walking"]
+"values": ["", "Still Beats Walking", ":3"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -99,15 +99,15 @@ tracks/2/path = NodePath("RichTextLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(15, 20, 25, 30, 35, 40, 45, 60),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(15, 20, 25, 30, 35, 40, 45, 60, 90),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["A game by:
 sengulc
 and
 manwithsomesortofplan", "Music from Skye Ashe's \"SKYTUNES\".
 
-SFX and particle assets from Chequered Ink's complete asset pack bundle.", "Created in 3 days for \"Mini Jam 221: Autumn\", with the limitation \"Staying Warm\"", "Thanks for playing!", "You can close the game now.", "Unless you want to wait another sixty seconds", "It's ok. I can wait.", "I'm not sure what more you're expecting here."]
+SFX and particle assets from Chequered Ink's complete asset pack bundle.", "Created in 3 days for \"Mini Jam 221: Autumn\", with the limitation \"Staying Warm\"", "Thanks for playing!", "You can close the game now.", "Unless you want to wait another sixty seconds", "It's ok. I can wait.", "I'm not sure what more you're expecting here.", ":3"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
