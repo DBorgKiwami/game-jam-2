@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://biaoop45bdjv0" path="res://images/steeringwheel.png" id="5_m6d4s"]
 [ext_resource type="PackedScene" uid="uid://c5xku7oeeh1x8" path="res://minigames/heater.tscn" id="6_4dapg"]
 [ext_resource type="Texture2D" uid="uid://drmstguay62n2" path="res://images/heatericonwhite.png" id="6_4vual"]
+[ext_resource type="Texture2D" uid="uid://dg40u5axy633f" path="res://images/steering column.png" id="6_i38vh"]
 [ext_resource type="Texture2D" uid="uid://btbra207x4ife" path="res://images/tool-btns/windshield.png" id="7_4vual"]
 [ext_resource type="Texture2D" uid="uid://ddfm85jcal6dx" path="res://images/radioiconwhite.png" id="7_agk5f"]
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
@@ -17,6 +18,17 @@
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
+
+[node name="SteeringColumn" type="TextureRect" parent="." unique_id=2075460393]
+custom_minimum_size = Vector2(250, 250)
+offset_left = 676.0
+offset_top = 398.0
+offset_right = 926.0
+offset_bottom = 648.0
+offset_transform_enabled = true
+texture = ExtResource("6_i38vh")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="ToolbarAndWheel" type="HBoxContainer" parent="." unique_id=394098995]
 custom_minimum_size = Vector2(800, 0)
