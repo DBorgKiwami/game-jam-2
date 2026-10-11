@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bvmwyebl4jni3" path="res://images/finalscene1.png" id="1_p7da5"]
 [ext_resource type="Texture2D" uid="uid://3d8853xua4eh" path="res://images/finalscene2.png" id="2_fokdw"]
 [ext_resource type="Texture2D" uid="uid://c3ewsullfohd4" path="res://images/finalscene3.png" id="3_hqgg6"]
+[ext_resource type="AudioStream" uid="uid://dnvrfjcc1p24e" path="res://soundeffects/music/endingsong.mp3" id="4_hqgg6"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_p7da5"]
 frames = 3
@@ -39,6 +40,30 @@ tracks/1/keys = {
 "update": 1,
 "values": ["Label"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["A game by sengulc and manwithsomesortofplan"]
+}
 
 [sub_resource type="Animation" id="Animation_hqgg6"]
 resource_name = "ending"
@@ -48,7 +73,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
@@ -67,6 +92,35 @@ tracks/1/keys = {
 "update": 1,
 "values": ["", "Still Beats Walking"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15, 20, 25, 30, 35, 40, 45, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["A game by:
+sengulc
+and
+manwithsomesortofplan", "Music from Skye Ashe's \"SKYTUNES\".
+
+SFX and particle assets from Chequered Ink's complete asset pack bundle.", "Created in 3 days for \"Mini Jam 221: Autumn\", with the limitation \"Staying Warm\"", "Thanks for playing!", "You can close the game now.", "Unless you want to wait another sixty seconds", "It's ok. I can wait.", "I'm not sure what more you're expecting here."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecft6"]
 _data = {
@@ -75,6 +129,10 @@ _data = {
 }
 
 [sub_resource type="SystemFont" id="SystemFont_yf5fn"]
+font_names = PackedStringArray("Courier New")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_g4v7s"]
 font_names = PackedStringArray("Courier New")
 
 [node name="Panel" type="CanvasLayer" unique_id=2095912444]
@@ -110,3 +168,18 @@ theme_override_fonts/font = SubResource("SystemFont_yf5fn")
 theme_override_font_sizes/font_size = 80
 text = "Label"
 horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=78197454]
+custom_minimum_size = Vector2(555.995, 0)
+offset_left = 265.0
+offset_top = 194.0
+offset_right = 820.995
+offset_bottom = 290.0
+theme_override_fonts/normal_font = SubResource("SystemFont_g4v7s")
+theme_override_font_sizes/normal_font_size = 42
+text = "A game by sengulc and manwithsomesortofplan"
+fit_content = true
+
+[node name="Ending Song" type="AudioStreamPlayer2D" parent="." unique_id=1758688977]
+stream = ExtResource("4_hqgg6")
+autoplay = true

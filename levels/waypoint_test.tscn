@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhsjl27s6wrfq"]
+
+[ext_resource type="PackedScene" uid="uid://bweu00t7cgvrw" path="res://levels/drive_thru.tscn" id="1_kyg2y"]
+[ext_resource type="PackedScene" uid="uid://dqqlr03dm1s1" path="res://levels/grocery_store.tscn" id="2_j50hw"]
+[ext_resource type="PackedScene" uid="uid://bl4vjqa80jcv6" path="res://levels/house.tscn" id="3_musvg"]
+[ext_resource type="PackedScene" uid="uid://b3k3orsewelgp" path="res://player/playercar.tscn" id="4_j50hw"]
+[ext_resource type="PackedScene" uid="uid://bkhavqi0ynfy4" path="res://ui/toolbar.tscn" id="5_musvg"]
+
+[node name="Waypoint Test" type="Node2D" unique_id=1521820827]
+
+[node name="Drive Thru" parent="." unique_id=1840317719 instance=ExtResource("1_kyg2y")]
+position = Vector2(685, 167)
+
+[node name="Grocery Store" parent="." unique_id=134189799 instance=ExtResource("2_j50hw")]
+position = Vector2(-2037, -523)
+
+[node name="House" parent="." unique_id=696121312 instance=ExtResource("3_musvg")]
+position = Vector2(-3982, 170)
+
+[node name="Car" parent="." unique_id=2090852087 instance=ExtResource("4_j50hw")]
+position = Vector2(1855, 1961)
+
+[node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("5_musvg")]

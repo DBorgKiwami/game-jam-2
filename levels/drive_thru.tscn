@@ -52,6 +52,7 @@ shape = SubResource("CircleShape2D_0nook")
 
 [node name="Timer" type="Timer" parent="." unique_id=1594213246]
 wait_time = 5.0
+one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1327982738]
 custom_minimum_size = Vector2(200, 0)
@@ -75,3 +76,7 @@ show_percentage = false
 position = Vector2(-2, -5)
 scale = Vector2(1.6953125, 1.6953125)
 texture = ExtResource("6_tmwoc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_house_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_house_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
