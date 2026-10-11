@@ -32,6 +32,7 @@ var turningSpeed : float = 0
 var touchingObject = false
 
 func _ready() -> void:
+	direction = direction.rotated(rotation)
 	SignalBus.connect("reached_house", victory)
 	SignalBus.connect("broken_part", _break_part)
 
