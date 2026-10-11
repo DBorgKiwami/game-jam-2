@@ -43,9 +43,11 @@ func _physics_process(delta: float) -> void:
 			beingClicked = false
 		#print(inputNumber)
 		if turnDistance > 10:
+			$TickTick.playing = true
 			inputNumber = wrap(inputNumber + 1, 0, 10)
 			turnDistance = 0
 		if turnDistance < -10:
+			$TickTick.playing = true
 			inputNumber = wrap(inputNumber - 1, 0, 10)
 			turnDistance = 0
 		label.text = str(number1) + str(number2) + "." + str(inputNumber)

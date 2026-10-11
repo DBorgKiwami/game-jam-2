@@ -112,10 +112,16 @@ texture = ExtResource("4_l13bh")
 [node name="Good" type="AudioStreamPlayer2D" parent="." unique_id=1148736609]
 stream = ExtResource("5_808hm")
 volume_db = -4.0
+max_distance = 100000000000.0
+max_polyphony = 100
+bus = &"Minigames"
 
 [node name="Bad" type="AudioStreamPlayer2D" parent="." unique_id=143102310]
 stream = ExtResource("6_0oaf8")
 volume_db = -3.0
+max_distance = 100000000000.0
+max_polyphony = 100
+bus = &"Minigames"
 
 [connection signal="mouse_entered" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Ripcord/Area2D" to="." method="_on_area_2d_mouse_exited"]
