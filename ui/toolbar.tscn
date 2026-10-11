@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cry37rui407f3" path="res://ui/toolbar.gd" id="1_ata6n"]
 [ext_resource type="Texture2D" uid="uid://b0kj2etea1f42" path="res://images/backbutton.png" id="2_62suo"]
 [ext_resource type="Texture2D" uid="uid://di8abe44rp8bk" path="res://images/icon.svg" id="2_ata6n"]
-[ext_resource type="PackedScene" uid="uid://bq6dbw55wnsw0" path="res://minigames/testminigame.tscn" id="2_gb7al"]
 [ext_resource type="Texture2D" uid="uid://byqvtcb4togeo" path="res://images/engineiconwhite.png" id="3_62suo"]
 [ext_resource type="Texture2D" uid="uid://bfykpasogwtew" path="res://images/tool-btns/tire.png" id="5_62suo"]
 [ext_resource type="PackedScene" uid="uid://c0q51j3dsg355" path="res://minigames/radio.tscn" id="5_e376i"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ddfm85jcal6dx" path="res://images/radioiconwhite.png" id="7_agk5f"]
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
 [ext_resource type="PackedScene" uid="uid://dh8s2kyvn520g" path="res://minigames/windshield.tscn" id="9_m6d4s"]
+[ext_resource type="PackedScene" uid="uid://c8uqd1re44bac" path="res://minigames/flattire.tscn" id="12_4vual"]
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
@@ -142,8 +142,7 @@ transform = Transform2D(0.4, 0, 0, 0.4, 448.955, 423.405)
 [node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
 visible = false
 
-[node name="Testminigame" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("2_gb7al")]
-visible = false
+[node name="FlatTire" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("12_4vual")]
 
 [node name="Heater" parent="MinigameContainer" unique_id=1334399775 instance=ExtResource("6_4dapg")]
 visible = false

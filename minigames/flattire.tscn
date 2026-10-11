@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c8uqd1re44bac"]
+
+[ext_resource type="Texture2D" uid="uid://buob13y6iuwx7" path="res://images/fan gauge.png" id="1_45t6i"]
+[ext_resource type="Script" uid="uid://dr5wsgw3xn5xk" path="res://minigames/flattire.gd" id="1_w2v6p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2pfo"]
+radius = 75.99336
+
+[node name="FlatTire" type="Node2D" unique_id=1738096528]
+script = ExtResource("1_w2v6p")
+
+[node name="Label" type="Label" parent="." unique_id=729796848]
+offset_left = -389.0
+offset_top = -115.0
+offset_right = -349.0
+offset_bottom = -92.0
+theme_override_font_sizes/font_size = 32
+
+[node name="Panel" type="Panel" parent="." unique_id=682609614]
+z_index = -5
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -360.0
+offset_right = 540.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Pump" type="Sprite2D" parent="." unique_id=1534065112]
+position = Vector2(-115.999985, 19.999996)
+scale = Vector2(1.745, 1.745)
+texture = ExtResource("1_45t6i")
+
+[node name="Area2D" type="Area2D" parent="Pump" unique_id=128706637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pump/Area2D" unique_id=125746144]
+position = Vector2(118.62463, -13.753581)
+shape = SubResource("CircleShape2D_w2pfo")
+
+[node name="Timer" type="Timer" parent="." unique_id=997730370]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[connection signal="mouse_entered" from="Pump/Area2D" to="." method="_on_pump_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Pump/Area2D" to="." method="_on_pump_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
