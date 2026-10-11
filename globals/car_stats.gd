@@ -17,6 +17,18 @@ var car_parts := {
 
 var clearing_windshield := false
 
+func reset():
+	# RESET GLOBAL VAR.S
+	car_parts = {
+		"engine" = true, # breaks accel
+		"wheel" = true, # breaks turning
+		"heating" = true, # decr. health
+		"radio" = true, # breaks waypoint
+		"windshield" = true # fogs screen
+		#"aerial" = true
+		}
+	clearing_windshield = false
+
 # called from player/car script when timer sets off
 func break_something():
 	#var part_to_break = car_parts.keys()[1] # HARDCODE

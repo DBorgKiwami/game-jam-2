@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d00v1o3c4q48a"]
 
+[ext_resource type="Script" uid="uid://2xp2hrg8e5dg" path="res://levels/gameover.gd" id="1_g5c8h"]
 [ext_resource type="Texture2D" uid="uid://dmcncdf36l43b" path="res://images/ending.png" id="1_owe7a"]
 [ext_resource type="AudioStream" uid="uid://dnvrfjcc1p24e" path="res://soundeffects/music/endingsong.mp3" id="4_wk6ut"]
 
@@ -7,7 +8,8 @@
 font_names = PackedStringArray("Courier New")
 subpixel_positioning = 0
 
-[node name="Panel" type="CanvasLayer" unique_id=2095912444]
+[node name="GameOver" type="CanvasLayer" unique_id=1099542677]
+script = ExtResource("1_g5c8h")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=263709689]
 anchors_preset = 8
@@ -51,3 +53,5 @@ horizontal_alignment = 1
 [node name="Ending Song" type="AudioStreamPlayer2D" parent="." unique_id=1758688977]
 stream = ExtResource("4_wk6ut")
 autoplay = true
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

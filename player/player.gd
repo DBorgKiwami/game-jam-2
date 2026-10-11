@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 	else:
 		$Radio.volume_db = -20
 		$Radio.pitch_scale = 1.0
-	t = delta * 0.025
+	t = delta * 0.5
 	if inStorm or !CarStats.car_parts["heating"]:
 		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)
 	else:
@@ -155,7 +155,7 @@ func _physics_process(delta: float) -> void:#
 	else:
 		touchingObject = false
 	#print($Timer.time_left)
-	#print(velocity)
+	#print(PlayerStats.health)
 	
 	engineAudio.volume_db = remap(abs(forwardSpeed), 0, maxSpeed, -60, -25)
 	engineAudio.pitch_scale = remap(abs(forwardSpeed), 0, maxSpeed, 0.3, 1.0)
