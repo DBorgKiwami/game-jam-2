@@ -10,6 +10,8 @@ func _on_break(index):
 	#print(index)
 	#print(buttonsIndicators)
 	buttonsIndicators[index] = true
+	print("index %s has broken" %index)
+	print(CarStats.car_parts.keys()[index])
 	#var i = 0
 	#for part in CarStats.car_parts:
 		#print(part)
@@ -48,7 +50,7 @@ func _process(delta: float) -> void:
 			#print(1.0 * wrapf(timeElapsed, 0.0, 1.0))
 			buttons[i].modulate.r = 1.0 * wrapf(timeElapsed, 0.0, 1.0)
 
-# fixed part signal received: disable respective button and minigame
+# fixed part signal received: modulate button back to black and stop indicating
 func _fix_part(index : int):
 	close_all_tabs()
 	buttons[index].modulate = Color(0, 0, 0)
