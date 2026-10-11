@@ -13,6 +13,16 @@ var minigame_completion := [
 	"Clear the foggy windshield by moving the wipers up and down with your mouse"
 ]
 
+var difficulty_settings := {
+	# setting: [easy, med, hard]
+	"shrink_speed": [5.0, 7.5, 10.0],
+	"offroad_damage": [2.5, 5.0, 10.0],
+	"wait_time": [35.0, 25.0, 10.0]
+}
+
+enum difficulty_modes {EASY, MEDIUM, HARD}
+var difficulty := difficulty_modes.MEDIUM # default
+
 func reset():
 	health = 100.0
 	hasBeenToDriveThru = false

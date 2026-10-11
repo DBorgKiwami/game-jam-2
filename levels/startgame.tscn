@@ -57,6 +57,38 @@ Spacebar - Handbrake
 Mouse - Repairs
 
 If your heat bar runs out, game over!
-Crashing or Driving offroad will break your car faster!
+Crashing or Driving offroad will break your car faster!"
 
-Click anywhere to begin :)"
+[node name="OptionButton" type="OptionButton" parent="." unique_id=529457484]
+offset_left = 85.0
+offset_top = 536.0
+offset_right = 256.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 32
+selected = 1
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+
+[node name="Difficulty" type="Label" parent="OptionButton" unique_id=1717367809]
+layout_mode = 1
+offset_top = -29.0
+offset_right = 124.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 24
+text = "Difficulty"
+
+[node name="StartButton" type="Button" parent="." unique_id=533823057]
+offset_left = 279.0
+offset_top = 536.0
+offset_right = 362.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="StartButton" to="." method="start"]

@@ -9,6 +9,7 @@ var offroad := false
 var offroaddamage = 0.0
 @onready var engineAudio : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@onready var timer: Timer = $Timer
 @onready var fog_reference : ColorRect = get_tree().get_first_node_in_group("fog")
 @export var maxSpeed : float = 100.0
 @export var maxBrakingSpeed : float = 20.0
@@ -35,8 +36,10 @@ var touchingObject = false
 
 func _ready() -> void:
 	direction = direction.rotated(rotation)
+	timer.wait_time = PlayerStats.difficulty_settings["wait_time"][PlayerStats.difficulty]
 	SignalBus.connect("reached_house", victory)
 	SignalBus.connect("broken_part", _break_part)
+	offroaddammageval = PlayerStats.difficulty_settings["offroad_damage"][PlayerStats.difficulty]
 
 func victory():
 	print("Your Win!")
@@ -75,7 +78,7 @@ func _process(delta: float) -> void:
 		fog_tween = create_tween()
 		fog_tween.tween_property(fog_reference, "modulate:a", target, 0.1)
 
-		
+var offroaddammageval = 5.0
 func _physics_process(delta: float) -> void:#
 	# Check if player is breaking
 	
@@ -89,7 +92,7 @@ func _physics_process(delta: float) -> void:#
 		offroaddamage += delta
 		if offroaddamage > 10.0:
 			CarStats.break_something()
-			offroaddamage -= 5.0
+			offroaddamage -= offroaddammageval
 	#print(offroaddamage)
 
 	if Input.is_action_pressed("brakes") or offroad:
