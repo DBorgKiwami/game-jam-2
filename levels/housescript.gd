@@ -3,6 +3,7 @@ extends Node2D
 @onready var area = $"House Area"
 @onready var timer = $Timer
 @onready var progressBar = $ProgressBar
+const FINALSCENE = preload("uid://c3fxh2uaegfe6")
 
 func _ready() -> void:
 	$Label.visible = false
@@ -27,6 +28,7 @@ func _on_house_area_body_exited(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	if PlayerStats.hasBeenToDriveThru and PlayerStats.hasBeenToGroceryStore:
 		SignalBus.emit_signal("reached_house")
+		get_tree().change_scene_to_packed(FINALSCENE)
 	else:
 		print("bitch")
 		$Label.visible = true
