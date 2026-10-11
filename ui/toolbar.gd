@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 func _fix_part(index : int):
 	close_all_tabs()
 	buttons[index].modulate = Color(0, 0, 0)
+	buttonsIndicators[index] = false
 
 # return btn closes current/all minigame panel(s)
 func _on_return_pressed() -> void:
