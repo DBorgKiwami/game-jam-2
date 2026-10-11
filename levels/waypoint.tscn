@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c74dm273owc7u"]
+
+[ext_resource type="Script" uid="uid://cscoo7a8h6wcx" path="res://levels/hud_pointer.gd" id="1_mjlj6"]
+[ext_resource type="Texture2D" uid="uid://jcmxfx0dp2h3" path="res://images/directionarrow1.png" id="2_uli1c"]
+[ext_resource type="Texture2D" uid="uid://riqun1ltakn0" path="res://images/directionarrow2.png" id="3_43cfi"]
+[ext_resource type="Texture2D" uid="uid://bcw6c0ijw3yya" path="res://images/directionarrow3.png" id="4_alr36"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bg5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uli1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_43cfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_alr36")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Waypoint" type="Node2D" unique_id=336144352]
+script = ExtResource("1_mjlj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=398549790]
+sprite_frames = SubResource("SpriteFrames_0bg5l")
+autoplay = "default"
+frame_progress = 0.6972833

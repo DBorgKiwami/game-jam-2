@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bweu00t7cgvrw"]
+
+[ext_resource type="Script" uid="uid://fdojwl4xip4c" path="res://levels/drive_thru.gd" id="1_0nook"]
+[ext_resource type="PackedScene" uid="uid://c74dm273owc7u" path="res://levels/waypoint.tscn" id="1_5va5s"]
+[ext_resource type="Texture2D" uid="uid://ctxicxfv8n0ve" path="res://images/drivethru1.png" id="2_enrek"]
+[ext_resource type="Texture2D" uid="uid://dgpvln218m4tt" path="res://images/drivethru2.png" id="3_0nook"]
+[ext_resource type="Texture2D" uid="uid://ljcb3c45ovrm" path="res://images/drivethru3.png" id="4_tmwoc"]
+[ext_resource type="Texture2D" uid="uid://dhl5wm4wi4w2j" path="res://images/dropshadow.png" id="6_tmwoc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_enrek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0nook")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tmwoc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nook"]
+radius = 280.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enrek"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nook"]
+bg_color = Color(0.16862746, 0.70980394, 0, 1)
+
+[node name="Drive Thru" type="Node2D" unique_id=1840317719]
+script = ExtResource("1_0nook")
+
+[node name="Waypoint" parent="." unique_id=336144352 instance=ExtResource("1_5va5s")]
+position = Vector2(1, -169)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1322121508]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame_progress = 0.709643
+
+[node name="Area2D" type="Area2D" parent="." unique_id=179775869]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=930056688]
+shape = SubResource("CircleShape2D_0nook")
+
+[node name="Timer" type="Timer" parent="." unique_id=1594213246]
+wait_time = 5.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1327982738]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -197.0
+offset_right = 100.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_enrek")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0nook")
+max_value = 5.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1182802414]
+position = Vector2(-2, -5)
+scale = Vector2(1.6953125, 1.6953125)
+texture = ExtResource("6_tmwoc")
