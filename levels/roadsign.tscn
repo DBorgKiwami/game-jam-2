@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://duaale14ydikp"]
+
+[ext_resource type="Texture2D" uid="uid://clewl5u0lowsm" path="res://images/roadsign1.png" id="1_3p6rp"]
+[ext_resource type="Script" uid="uid://de8qaevpeyg3r" path="res://levels/roadsign.gd" id="2_55ocm"]
+[ext_resource type="Texture2D" uid="uid://dhl5wm4wi4w2j" path="res://images/dropshadow.png" id="2_g4q70"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t5u87"]
+radius = 19.026299
+
+[node name="Roadsign" type="Sprite2D" unique_id=179705244]
+texture = ExtResource("1_3p6rp")
+script = ExtResource("2_55ocm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1892100783]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=228076647]
+z_index = 3
+position = Vector2(-8, 81)
+shape = SubResource("CircleShape2D_t5u87")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428739336]
+z_index = -1
+texture = ExtResource("2_g4q70")
