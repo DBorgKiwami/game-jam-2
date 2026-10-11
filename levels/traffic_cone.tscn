@@ -7,6 +7,7 @@
 size = Vector2(69.75, 46.375)
 
 [node name="Traffic Cone" type="Sprite2D" unique_id=961763259]
+z_index = 3
 texture = ExtResource("1_fpo0t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=12367875]

@@ -5,6 +5,8 @@ var viewportcenter
 var origin
 @export var distanceBeforeNeutralPoint = 2000.0
 @export var waypointOrder = 0
+var randomOrigin = Vector2.ZERO
+var randomTimer = 0.0
 
 @onready var reticle: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -38,7 +40,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var functionalOrigin
 	if !CarStats.car_parts["radio"]:
-		functionalOrigin = Vector2(randf_range(-10000, 10000),randf_range(-10000, 10000))
+		randomTimer += delta
+		if randomTimer > 1.0:
+			randomOrigin = Vector2(randf_range(-10000, 10000),randf_range(-10000, 10000))
+			randomTimer -= 3.0
+		functionalOrigin = randomOrigin
 	else:
 		functionalOrigin = origin
 	look_at(functionalOrigin)

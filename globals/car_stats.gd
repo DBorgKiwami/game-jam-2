@@ -40,6 +40,7 @@ func break_something():
 		print("everything is broken. nothing to break")
 		return
 	var part_to_break = intact.pick_random()
+	#var part_to_break = "radio"
 	car_parts[part_to_break] = false
 	SignalBus.broken_part.emit(car_parts.keys().find(part_to_break))
 

@@ -40,7 +40,6 @@ size = Vector2(8874.5, 172.75)
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 
 [node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
-shrinkSpeed = 20.0
 
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]
 
@@ -619,7 +618,7 @@ position = Vector2(-5122, -1631)
 position = Vector2(-6000, -7283)
 
 [node name="Drive Thru" parent="." unique_id=1840317719 instance=ExtResource("18_ony54")]
-position = Vector2(-2691, -1290)
+position = Vector2(-2740, -1306)
 
 [node name="Highrise57" parent="." unique_id=151200041 instance=ExtResource("7_6euoa")]
 position = Vector2(-2332, -1616)
@@ -811,7 +810,7 @@ position = Vector2(-6453, -500)
 position = Vector2(-6263, -504)
 
 [node name="Highrise107" parent="." unique_id=802022069 instance=ExtResource("7_6euoa")]
-position = Vector2(-6097, -504)
+position = Vector2(-3577, -1266)
 
 [node name="Highrise108" parent="." unique_id=1855244572 instance=ExtResource("7_6euoa")]
 position = Vector2(-5911, -517)
@@ -1515,6 +1514,18 @@ position = Vector2(-5112, -3519)
 
 [node name="Phonebooth20" parent="." unique_id=156900453 instance=ExtResource("13_0ory1")]
 position = Vector2(-4324, -2002)
+
+[node name="Highrise179" parent="." unique_id=620849850 instance=ExtResource("7_6euoa")]
+position = Vector2(-1706, -311)
+
+[node name="Highrise180" parent="." unique_id=377107126 instance=ExtResource("7_6euoa")]
+position = Vector2(-1504, -317)
+
+[node name="Highrise181" parent="." unique_id=2144739306 instance=ExtResource("7_6euoa")]
+position = Vector2(-1176, -798)
+
+[node name="Highrise182" parent="." unique_id=509068241 instance=ExtResource("7_6euoa")]
+position = Vector2(-1004, -788)
 
 [connection signal="body_entered" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_entered"]
 [connection signal="body_exited" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_exited"]

@@ -5,6 +5,8 @@ var direction : Vector2 = Vector2.UP
 var directionBeforeBreak : Vector2 = Vector2.UP
 var inStorm := false
 var offroad := false
+
+var offroaddamage = 0.0
 @onready var engineAudio : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var fog_reference : ColorRect = get_tree().get_first_node_in_group("fog")
@@ -82,6 +84,12 @@ func _physics_process(delta: float) -> void:#
 	var activeDecel = 0.0
 	var activeTurnAccel = 0.0
 	var activeTurnDecel = 0.0
+	
+	if offroad and forwardSpeed != 0:
+		offroaddamage += delta
+		if offroaddamage > 10.0:
+			CarStats.break_something()
+			offroaddamage -= 10.0
 
 	if Input.is_action_pressed("brakes") or offroad:
 		activeMaxSpeed = maxBrakingSpeed
@@ -151,6 +159,7 @@ func _physics_process(delta: float) -> void:#
 			touchingObject = true
 			$Crash.volume_db = remap(abs(forwardSpeed), 0, maxSpeed, -12, -6)
 			$Crash.playing = true
+			CarStats.break_something()
 		forwardSpeed *= crashSpeedMultiplier
 	else:
 		touchingObject = false

@@ -7,7 +7,7 @@
 size = Vector2(20, 31)
 
 [node name="Parking Meter" type="Sprite2D" unique_id=279871310]
-z_index = 1
+z_index = 3
 texture = ExtResource("1_hu75o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1198265510]

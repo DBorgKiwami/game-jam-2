@@ -8,6 +8,7 @@
 radius = 19.026299
 
 [node name="Roadsign" type="Sprite2D" unique_id=179705244]
+z_index = 3
 texture = ExtResource("1_3p6rp")
 script = ExtResource("2_55ocm")
 
