@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://c3fxh2uaegfe6"]
+
+[ext_resource type="Texture2D" uid="uid://bvmwyebl4jni3" path="res://images/finalscene1.png" id="1_p7da5"]
+[ext_resource type="Texture2D" uid="uid://3d8853xua4eh" path="res://images/finalscene2.png" id="2_fokdw"]
+[ext_resource type="Texture2D" uid="uid://c3ewsullfohd4" path="res://images/finalscene3.png" id="3_hqgg6"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_p7da5"]
+frames = 3
+frame_0/texture = ExtResource("1_p7da5")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_fokdw")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_hqgg6")
+frame_2/duration = 0.1
+
+[sub_resource type="Animation" id="Animation_fokdw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Label"]
+}
+
+[sub_resource type="Animation" id="Animation_hqgg6"]
+resource_name = "ending"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.5963668, 0.5963674, 0.59636694, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "Still Beats Walking"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ecft6"]
+_data = {
+&"RESET": SubResource("Animation_fokdw"),
+&"ending": SubResource("Animation_hqgg6")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_yf5fn"]
+font_names = PackedStringArray("Courier New")
+
+[node name="Panel" type="CanvasLayer" unique_id=2095912444]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=263709689]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.67999935, 0.67999935)
+pivot_offset = Vector2(956, 540)
+texture = SubResource("AnimatedTexture_p7da5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1735686910]
+libraries/ = SubResource("AnimationLibrary_ecft6")
+autoplay = &"ending"
+
+[node name="Label" type="Label" parent="." unique_id=1010953100]
+offset_left = -27.0
+offset_top = 69.0
+offset_right = 1182.0
+offset_bottom = 190.0
+pivot_offset = Vector2(565.395, 0)
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_yf5fn")
+theme_override_font_sizes/font_size = 80
+text = "Label"
+horizontal_alignment = 1
