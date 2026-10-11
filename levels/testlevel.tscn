@@ -9,6 +9,30 @@
 [ext_resource type="PackedScene" uid="uid://6106asoa5w8s" path="res://minigames/fog.tscn" id="8_82lur"]
 [ext_resource type="Texture2D" uid="uid://bgwg03xgqnthr" path="res://images/level/image.png" id="8_dyqbh"]
 [ext_resource type="Texture2D" uid="uid://c3o5s7yiih3k7" path="res://images/level/level_mask.png" id="9_dyqbh"]
+[ext_resource type="PackedScene" uid="uid://duaale14ydikp" path="res://levels/roadsign.tscn" id="10_hxp06"]
+[ext_resource type="PackedScene" uid="uid://bk48pkt04qx62" path="res://levels/tree.tscn" id="11_qql5o"]
+[ext_resource type="PackedScene" uid="uid://v6cvbrnrcy3o" path="res://levels/road_block.tscn" id="12_it4vp"]
+[ext_resource type="PackedScene" uid="uid://bp21w8n48w782" path="res://levels/phonebooth.tscn" id="13_0ory1"]
+[ext_resource type="PackedScene" uid="uid://bv48utep50jjy" path="res://levels/traffic_cone.tscn" id="14_qql5o"]
+[ext_resource type="PackedScene" uid="uid://dmjy40yv3axwu" path="res://levels/parking_meter.tscn" id="15_it4vp"]
+[ext_resource type="PackedScene" uid="uid://frcemd4seoc6" path="res://levels/bench.tscn" id="16_hnalp"]
+[ext_resource type="PackedScene" uid="uid://dqqlr03dm1s1" path="res://levels/grocery_store.tscn" id="17_kam1y"]
+[ext_resource type="PackedScene" uid="uid://bweu00t7cgvrw" path="res://levels/drive_thru.tscn" id="18_ony54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_766f2"]
+size = Vector2(210, 10374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnalp"]
+size = Vector2(4872, 218)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kam1y"]
+size = Vector2(4365, 223.80495)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ony54"]
+size = Vector2(131, 8876)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(158, 280)
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 
@@ -26,9 +50,6 @@ visible = false
 position = Vector2(33.000008, -24.999992)
 scale = Vector2(7.12, 7.12)
 texture = ExtResource("6_l0kak")
-
-[node name="House" parent="." unique_id=696121312 instance=ExtResource("5_8j3fl")]
-position = Vector2(934, -1502)
 
 [node name="ScreenShaders" type="CanvasLayer" parent="." unique_id=974190273]
 layer = 0
@@ -48,6 +69,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_dyqbh")
 
 [node name="LevelAreaMask" type="Sprite2D" parent="LevelSetup" unique_id=1348399560]
+visible = false
 position = Vector2(-1553.5, -1257.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("9_dyqbh")
@@ -99,5 +121,771 @@ position = Vector2(-1553.5, -1257.5)
 scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(1116, 3027, 1116, 3028.7002, 983.5, 3060, 971.7998, 3110, 972, 3265.1, 1004.9999, 3444.9998, 1392.8569, 3374.9998, 1396, 3031.9, 1396, 3027)
 
+[node name="Highrise29" parent="." unique_id=75299469 instance=ExtResource("7_6euoa")]
+position = Vector2(-1275, -289)
+
+[node name="Highrise2" parent="." unique_id=2088911170 instance=ExtResource("7_6euoa")]
+position = Vector2(-1292, 285)
+
+[node name="Highrise3" parent="." unique_id=277173918 instance=ExtResource("7_6euoa")]
+position = Vector2(-1147, 290)
+
+[node name="Highrise4" parent="." unique_id=1657555268 instance=ExtResource("7_6euoa")]
+position = Vector2(-2761, 890)
+
+[node name="Highrise5" parent="." unique_id=634604817 instance=ExtResource("7_6euoa")]
+position = Vector2(-2490, 845)
+
+[node name="Highrise6" parent="." unique_id=2018564920 instance=ExtResource("7_6euoa")]
+position = Vector2(-2265, 788)
+
+[node name="Highrise7" parent="." unique_id=1153207980 instance=ExtResource("7_6euoa")]
+position = Vector2(-530, 272)
+
+[node name="Highrise8" parent="." unique_id=859914880 instance=ExtResource("7_6euoa")]
+position = Vector2(-2064, 841)
+
+[node name="Highrise9" parent="." unique_id=197290578 instance=ExtResource("7_6euoa")]
+position = Vector2(-236, 282)
+
+[node name="Highrise10" parent="." unique_id=94563373 instance=ExtResource("7_6euoa")]
+position = Vector2(-82, 276)
+
+[node name="Highrise11" parent="." unique_id=794415595 instance=ExtResource("7_6euoa")]
+position = Vector2(75, 279)
+
+[node name="Highrise12" parent="." unique_id=110575786 instance=ExtResource("7_6euoa")]
+position = Vector2(-1262, 794)
+
+[node name="Highrise13" parent="." unique_id=626546708 instance=ExtResource("7_6euoa")]
+position = Vector2(-3047, 833)
+
+[node name="Highrise14" parent="." unique_id=440326714 instance=ExtResource("7_6euoa")]
+position = Vector2(-957, 780)
+
+[node name="Highrise15" parent="." unique_id=1149163262 instance=ExtResource("7_6euoa")]
+position = Vector2(745, 187)
+
+[node name="Highrise16" parent="." unique_id=1554991584 instance=ExtResource("7_6euoa")]
+position = Vector2(-633, 760)
+
+[node name="Highrise17" parent="." unique_id=1314719936 instance=ExtResource("7_6euoa")]
+position = Vector2(-406, 764)
+
+[node name="Highrise18" parent="." unique_id=1212970155 instance=ExtResource("7_6euoa")]
+position = Vector2(-199, 754)
+
+[node name="Highrise19" parent="." unique_id=468278262 instance=ExtResource("7_6euoa")]
+position = Vector2(15, 763)
+
+[node name="Highrise21" parent="." unique_id=13801256 instance=ExtResource("7_6euoa")]
+position = Vector2(1415, 496)
+
+[node name="Highrise22" parent="." unique_id=1167815481 instance=ExtResource("7_6euoa")]
+position = Vector2(1435, 667)
+
+[node name="Highrise23" parent="." unique_id=1921231027 instance=ExtResource("7_6euoa")]
+position = Vector2(-1972, -887)
+
+[node name="Highrise24" parent="." unique_id=1211734256 instance=ExtResource("7_6euoa")]
+position = Vector2(-2573, -222)
+
+[node name="Highrise25" parent="." unique_id=645265714 instance=ExtResource("7_6euoa")]
+position = Vector2(-2571, 186)
+
+[node name="Highrise26" parent="." unique_id=1481118356 instance=ExtResource("7_6euoa")]
+position = Vector2(-2106, 227)
+
+[node name="Highrise27" parent="." unique_id=551138674 instance=ExtResource("7_6euoa")]
+position = Vector2(-2303, -540)
+
+[node name="Highrise28" parent="." unique_id=352548421 instance=ExtResource("7_6euoa")]
+position = Vector2(-1890, -272)
+
+[node name="Highrise30" parent="." unique_id=586870899 instance=ExtResource("7_6euoa")]
+position = Vector2(-1093, -287)
+
+[node name="Highrise31" parent="." unique_id=212841892 instance=ExtResource("7_6euoa")]
+position = Vector2(-890, -281)
+
+[node name="Highrise32" parent="." unique_id=1258818675 instance=ExtResource("7_6euoa")]
+position = Vector2(-668, -272)
+
+[node name="Highrise33" parent="." unique_id=1234464848 instance=ExtResource("7_6euoa")]
+position = Vector2(-464, -272)
+
+[node name="Highrise34" parent="." unique_id=850052235 instance=ExtResource("7_6euoa")]
+position = Vector2(-255, -281)
+
+[node name="Highrise35" parent="." unique_id=1734464843 instance=ExtResource("7_6euoa")]
+position = Vector2(-6, -211)
+
+[node name="Roadsign" parent="." unique_id=179705244 instance=ExtResource("10_hxp06")]
+position = Vector2(-3136, 392)
+
+[node name="Roadsign2" parent="." unique_id=245900530 instance=ExtResource("10_hxp06")]
+position = Vector2(-3453, 387)
+
+[node name="Roadsign3" parent="." unique_id=805819969 instance=ExtResource("10_hxp06")]
+position = Vector2(-3461, -249)
+
+[node name="Roadsign4" parent="." unique_id=1695165110 instance=ExtResource("10_hxp06")]
+position = Vector2(-3161, -270)
+
+[node name="Tree" parent="." unique_id=663084134 instance=ExtResource("11_qql5o")]
+position = Vector2(-7300, -1375)
+
+[node name="Tree2" parent="." unique_id=1825880217 instance=ExtResource("11_qql5o")]
+position = Vector2(-6412, -1253)
+
+[node name="Tree3" parent="." unique_id=964592965 instance=ExtResource("11_qql5o")]
+position = Vector2(-7006, -1375)
+
+[node name="Tree4" parent="." unique_id=1012800942 instance=ExtResource("11_qql5o")]
+position = Vector2(-7544, -1597)
+
+[node name="Tree5" parent="." unique_id=1867878074 instance=ExtResource("11_qql5o")]
+position = Vector2(-7214, -1654)
+
+[node name="Tree6" parent="." unique_id=1728352662 instance=ExtResource("11_qql5o")]
+position = Vector2(-7551, -1934)
+
+[node name="Tree7" parent="." unique_id=154565445 instance=ExtResource("11_qql5o")]
+position = Vector2(-6878, -1153)
+
+[node name="Tree8" parent="." unique_id=137637060 instance=ExtResource("11_qql5o")]
+position = Vector2(-6677, -1518)
+
+[node name="Tree9" parent="." unique_id=82824578 instance=ExtResource("11_qql5o")]
+position = Vector2(-6133, -1418)
+
+[node name="Tree10" parent="." unique_id=774662520 instance=ExtResource("11_qql5o")]
+position = Vector2(-6419, -1561)
+
+[node name="Tree11" parent="." unique_id=843724932 instance=ExtResource("11_qql5o")]
+position = Vector2(-6283, -1941)
+
+[node name="Tree12" parent="." unique_id=711001490 instance=ExtResource("11_qql5o")]
+position = Vector2(-6835, -1797)
+
+[node name="Tree13" parent="." unique_id=1136295025 instance=ExtResource("11_qql5o")]
+position = Vector2(-6527, -2062)
+
+[node name="Tree14" parent="." unique_id=62063207 instance=ExtResource("11_qql5o")]
+position = Vector2(-7128, -2098)
+
+[node name="Tree15" parent="." unique_id=2098386163 instance=ExtResource("11_qql5o")]
+position = Vector2(-6830, -2248)
+
+[node name="Tree16" parent="." unique_id=2057318791 instance=ExtResource("11_qql5o")]
+position = Vector2(-7333, -2256)
+
+[node name="Tree17" parent="." unique_id=173207215 instance=ExtResource("11_qql5o")]
+position = Vector2(-7659, -2355)
+
+[node name="Road Block" parent="." unique_id=1319070503 instance=ExtResource("12_it4vp")]
+position = Vector2(-6954, -67)
+
+[node name="CollisionShape2D" parent="Road Block/StaticBody2D" parent_id_path=PackedInt32Array(1319070503, 93910743) index="0" unique_id=418529349]
+position = Vector2(-700, -3847)
+shape = SubResource("RectangleShape2D_766f2")
+
+[node name="Tree18" parent="." unique_id=311122148 instance=ExtResource("11_qql5o")]
+position = Vector2(-7067, -2568)
+
+[node name="Tree19" parent="." unique_id=115882380 instance=ExtResource("11_qql5o")]
+position = Vector2(-6410, -2490)
+
+[node name="Tree20" parent="." unique_id=786287840 instance=ExtResource("11_qql5o")]
+position = Vector2(-6768, -2724)
+
+[node name="Roadsign5" parent="." unique_id=517858486 instance=ExtResource("10_hxp06")]
+position = Vector2(192, 401)
+
+[node name="Roadsign6" parent="." unique_id=18351859 instance=ExtResource("10_hxp06")]
+position = Vector2(584, -295)
+
+[node name="Phonebooth" parent="." unique_id=1521204772 instance=ExtResource("13_0ory1")]
+position = Vector2(207, 791)
+
+[node name="Phonebooth2" parent="." unique_id=1030828878 instance=ExtResource("13_0ory1")]
+position = Vector2(1239, 374)
+
+[node name="Roadsign7" parent="." unique_id=1589523948 instance=ExtResource("10_hxp06")]
+position = Vector2(-1118, 831)
+
+[node name="Roadsign8" parent="." unique_id=1308000069 instance=ExtResource("10_hxp06")]
+position = Vector2(-794, 836)
+
+[node name="Road Block3" parent="." unique_id=1936647539 instance=ExtResource("12_it4vp")]
+position = Vector2(-1636, 934)
+
+[node name="CollisionShape2D" parent="Road Block3/StaticBody2D" parent_id_path=PackedInt32Array(1936647539, 93910743) index="0" unique_id=418529349]
+position = Vector2(673, 257)
+shape = SubResource("RectangleShape2D_hnalp")
+
+[node name="Road Block2" parent="." unique_id=1158254909 instance=ExtResource("12_it4vp")]
+position = Vector2(-4870, 707)
+
+[node name="CollisionShape2D" parent="Road Block2/StaticBody2D" parent_id_path=PackedInt32Array(1158254909, 93910743) index="0" unique_id=418529349]
+position = Vector2(-712.5, 486.90247)
+shape = SubResource("RectangleShape2D_kam1y")
+
+[node name="Highrise36" parent="." unique_id=561970505 instance=ExtResource("7_6euoa")]
+position = Vector2(1429, 842)
+
+[node name="Tree21" parent="." unique_id=1298922643 instance=ExtResource("11_qql5o")]
+position = Vector2(-6528, -2795)
+
+[node name="Tree22" parent="." unique_id=12481346 instance=ExtResource("11_qql5o")]
+position = Vector2(-7373, -2594)
+
+[node name="Tree23" parent="." unique_id=1748023275 instance=ExtResource("11_qql5o")]
+position = Vector2(-7660, -2831)
+
+[node name="Tree24" parent="." unique_id=1264317538 instance=ExtResource("11_qql5o")]
+position = Vector2(-7194, -2952)
+
+[node name="Tree25" parent="." unique_id=2085436601 instance=ExtResource("11_qql5o")]
+position = Vector2(-7466, -3110)
+
+[node name="Tree26" parent="." unique_id=802853668 instance=ExtResource("11_qql5o")]
+position = Vector2(-7609, -3540)
+
+[node name="Tree27" parent="." unique_id=522200745 instance=ExtResource("11_qql5o")]
+position = Vector2(-6861, -2970)
+
+[node name="Tree28" parent="." unique_id=247277030 instance=ExtResource("11_qql5o")]
+position = Vector2(-6581, -3179)
+
+[node name="Tree29" parent="." unique_id=997530930 instance=ExtResource("11_qql5o")]
+position = Vector2(-7053, -3250)
+
+[node name="Tree30" parent="." unique_id=263397535 instance=ExtResource("11_qql5o")]
+position = Vector2(-7368, -3566)
+
+[node name="Traffic Cone" parent="." unique_id=961763259 instance=ExtResource("14_qql5o")]
+position = Vector2(-3250, 417)
+
+[node name="Traffic Cone2" parent="." unique_id=283407740 instance=ExtResource("14_qql5o")]
+position = Vector2(-3374, 417)
+
+[node name="Tree31" parent="." unique_id=433572511 instance=ExtResource("11_qql5o")]
+position = Vector2(-3245, -274)
+
+[node name="Tree32" parent="." unique_id=1603713599 instance=ExtResource("11_qql5o")]
+position = Vector2(-3380, -269)
+
+[node name="Phonebooth3" parent="." unique_id=155029384 instance=ExtResource("13_0ory1")]
+position = Vector2(-3317, -81)
+
+[node name="Phonebooth4" parent="." unique_id=1278655612 instance=ExtResource("13_0ory1")]
+position = Vector2(-3320, 154)
+
+[node name="Tree33" parent="." unique_id=1363728337 instance=ExtResource("11_qql5o")]
+position = Vector2(-6646, -3531)
+
+[node name="Tree34" parent="." unique_id=661391572 instance=ExtResource("11_qql5o")]
+position = Vector2(-6522, -3924)
+
+[node name="Tree35" parent="." unique_id=1917173431 instance=ExtResource("11_qql5o")]
+position = Vector2(-6888, -3515)
+
+[node name="Tree36" parent="." unique_id=900641087 instance=ExtResource("11_qql5o")]
+position = Vector2(-7157, -3687)
+
+[node name="Tree37" parent="." unique_id=346484271 instance=ExtResource("11_qql5o")]
+position = Vector2(-7561, -3989)
+
+[node name="Tree38" parent="." unique_id=903289308 instance=ExtResource("11_qql5o")]
+position = Vector2(-7222, -4069)
+
+[node name="Tree39" parent="." unique_id=374675649 instance=ExtResource("11_qql5o")]
+position = Vector2(-6791, -3999)
+
+[node name="Tree40" parent="." unique_id=2129773287 instance=ExtResource("11_qql5o")]
+position = Vector2(-6813, -4495)
+
+[node name="Tree41" parent="." unique_id=1240461588 instance=ExtResource("11_qql5o")]
+position = Vector2(-7313, -4452)
+
+[node name="Tree42" parent="." unique_id=1902832955 instance=ExtResource("11_qql5o")]
+position = Vector2(-7588, -4742)
+
+[node name="Tree43" parent="." unique_id=1812460153 instance=ExtResource("11_qql5o")]
+position = Vector2(-7130, -4704)
+
+[node name="Tree44" parent="." unique_id=344221976 instance=ExtResource("11_qql5o")]
+position = Vector2(-7028, -4193)
+
+[node name="Tree45" parent="." unique_id=1198910361 instance=ExtResource("11_qql5o")]
+position = Vector2(-6850, -4893)
+
+[node name="Tree46" parent="." unique_id=237300102 instance=ExtResource("11_qql5o")]
+position = Vector2(-7378, -4947)
+
+[node name="Tree47" parent="." unique_id=1458807505 instance=ExtResource("11_qql5o")]
+position = Vector2(-7631, -5210)
+
+[node name="Tree48" parent="." unique_id=2085935280 instance=ExtResource("11_qql5o")]
+position = Vector2(-7232, -5183)
+
+[node name="Tree49" parent="." unique_id=1228915463 instance=ExtResource("11_qql5o")]
+position = Vector2(-6872, -5151)
+
+[node name="Tree50" parent="." unique_id=2103631916 instance=ExtResource("11_qql5o")]
+position = Vector2(-5837, -1498)
+
+[node name="Tree51" parent="." unique_id=1650044450 instance=ExtResource("11_qql5o")]
+position = Vector2(-6077, -1776)
+
+[node name="Tree52" parent="." unique_id=566927038 instance=ExtResource("11_qql5o")]
+position = Vector2(-5650, -1667)
+
+[node name="Tree53" parent="." unique_id=846272301 instance=ExtResource("11_qql5o")]
+position = Vector2(-1311, -6991)
+
+[node name="Tree54" parent="." unique_id=223950436 instance=ExtResource("11_qql5o")]
+position = Vector2(-1008, -6989)
+
+[node name="House" parent="." unique_id=696121312 instance=ExtResource("5_8j3fl")]
+position = Vector2(-1165, -6991)
+
+[node name="Parking Meter" parent="." unique_id=279871310 instance=ExtResource("15_it4vp")]
+position = Vector2(-1436, -15)
+
+[node name="Parking Meter2" parent="." unique_id=565178910 instance=ExtResource("15_it4vp")]
+position = Vector2(-1635, -17)
+
+[node name="Parking Meter3" parent="." unique_id=1553449970 instance=ExtResource("15_it4vp")]
+position = Vector2(-1803, -21)
+
+[node name="Highrise37" parent="." unique_id=609304819 instance=ExtResource("7_6euoa")]
+position = Vector2(1200, -492)
+
+[node name="Highrise38" parent="." unique_id=308959622 instance=ExtResource("7_6euoa")]
+position = Vector2(-4493, 420)
+
+[node name="Highrise39" parent="." unique_id=1336575104 instance=ExtResource("7_6euoa")]
+position = Vector2(-3960, 289)
+
+[node name="Highrise40" parent="." unique_id=1576140745 instance=ExtResource("7_6euoa")]
+position = Vector2(-4220, 312)
+
+[node name="Highrise41" parent="." unique_id=355662430 instance=ExtResource("7_6euoa")]
+position = Vector2(-3293, 839)
+
+[node name="Highrise42" parent="." unique_id=539111711 instance=ExtResource("7_6euoa")]
+position = Vector2(-3507, 798)
+
+[node name="Highrise43" parent="." unique_id=651445669 instance=ExtResource("7_6euoa")]
+position = Vector2(-3764, 822)
+
+[node name="Bench" parent="." unique_id=300189796 instance=ExtResource("16_hnalp")]
+position = Vector2(-793, -7904)
+
+[node name="Bench2" parent="." unique_id=1156831699 instance=ExtResource("16_hnalp")]
+position = Vector2(-870, -8686)
+
+[node name="Bench3" parent="." unique_id=710825671 instance=ExtResource("16_hnalp")]
+position = Vector2(-2210, -8616)
+
+[node name="Bench4" parent="." unique_id=789150222 instance=ExtResource("16_hnalp")]
+position = Vector2(-2150, -7937)
+
+[node name="Bench5" parent="." unique_id=427172059 instance=ExtResource("16_hnalp")]
+position = Vector2(-1687, -7960)
+
+[node name="Bench6" parent="." unique_id=1864841591 instance=ExtResource("16_hnalp")]
+position = Vector2(-1506, -8708)
+
+[node name="Bench7" parent="." unique_id=2144456281 instance=ExtResource("16_hnalp")]
+position = Vector2(232, -7914)
+
+[node name="Phonebooth5" parent="." unique_id=1492813714 instance=ExtResource("13_0ory1")]
+position = Vector2(-685, -6965)
+
+[node name="Tree55" parent="." unique_id=1997418942 instance=ExtResource("11_qql5o")]
+position = Vector2(-2258, -6545)
+
+[node name="Tree56" parent="." unique_id=185935555 instance=ExtResource("11_qql5o")]
+position = Vector2(-2594, -6290)
+
+[node name="Tree57" parent="." unique_id=892814454 instance=ExtResource("11_qql5o")]
+position = Vector2(-2351, -6128)
+
+[node name="Highrise44" parent="." unique_id=1658581277 instance=ExtResource("7_6euoa")]
+position = Vector2(-6907, -6159)
+
+[node name="Highrise45" parent="." unique_id=1245984183 instance=ExtResource("7_6euoa")]
+position = Vector2(-7091, -6159)
+
+[node name="Highrise46" parent="." unique_id=1343497450 instance=ExtResource("7_6euoa")]
+position = Vector2(-7282, -6177)
+
+[node name="Highrise47" parent="." unique_id=1383637159 instance=ExtResource("7_6euoa")]
+position = Vector2(-7484, -6166)
+
+[node name="Highrise48" parent="." unique_id=283960563 instance=ExtResource("7_6euoa")]
+position = Vector2(-7672, -6181)
+
+[node name="Highrise49" parent="." unique_id=1370974487 instance=ExtResource("7_6euoa")]
+position = Vector2(-7656, -8707)
+
+[node name="Highrise50" parent="." unique_id=1166382387 instance=ExtResource("7_6euoa")]
+position = Vector2(-7425, -8697)
+
+[node name="Highrise51" parent="." unique_id=1858044257 instance=ExtResource("7_6euoa")]
+position = Vector2(-7177, -8713)
+
+[node name="Highrise52" parent="." unique_id=1413289076 instance=ExtResource("7_6euoa")]
+position = Vector2(-6068, -8734)
+
+[node name="Highrise53" parent="." unique_id=1083367173 instance=ExtResource("7_6euoa")]
+position = Vector2(-5794, -8745)
+
+[node name="Highrise54" parent="." unique_id=214644636 instance=ExtResource("7_6euoa")]
+position = Vector2(-5433, -8772)
+
+[node name="Highrise55" parent="." unique_id=787514905 instance=ExtResource("7_6euoa")]
+position = Vector2(-5632, -8767)
+
+[node name="Highrise56" parent="." unique_id=775325081 instance=ExtResource("7_6euoa")]
+position = Vector2(-5202, -8772)
+
+[node name="Traffic Cone3" parent="." unique_id=802195372 instance=ExtResource("14_qql5o")]
+position = Vector2(-6256, -4419)
+
+[node name="Traffic Cone4" parent="." unique_id=1403051340 instance=ExtResource("14_qql5o")]
+position = Vector2(-5897, -4677)
+
+[node name="Traffic Cone5" parent="." unique_id=645086476 instance=ExtResource("14_qql5o")]
+position = Vector2(-5374, -241)
+
+[node name="Traffic Cone6" parent="." unique_id=1619206443 instance=ExtResource("14_qql5o")]
+position = Vector2(-5357, -5)
+
+[node name="Roadsign9" parent="." unique_id=1003852926 instance=ExtResource("10_hxp06")]
+position = Vector2(-2856, -664)
+
+[node name="Roadsign10" parent="." unique_id=2098512226 instance=ExtResource("10_hxp06")]
+position = Vector2(-1834, -1230)
+
+[node name="Roadsign11" parent="." unique_id=326521939 instance=ExtResource("10_hxp06")]
+position = Vector2(-870, -2001)
+
+[node name="Roadsign12" parent="." unique_id=1693641691 instance=ExtResource("10_hxp06")]
+position = Vector2(-254, -2001)
+
+[node name="Traffic Cone7" parent="." unique_id=1172828944 instance=ExtResource("14_qql5o")]
+position = Vector2(98, -2146)
+
+[node name="Traffic Cone8" parent="." unique_id=1235889474 instance=ExtResource("14_qql5o")]
+position = Vector2(90, -2562)
+
+[node name="Road Block4" parent="." unique_id=1462548962 instance=ExtResource("12_it4vp")]
+position = Vector2(491, -2311)
+
+[node name="CollisionShape2D" parent="Road Block4/StaticBody2D" parent_id_path=PackedInt32Array(1462548962, 93910743) index="0" unique_id=418529349]
+position = Vector2(804, -2282)
+shape = SubResource("RectangleShape2D_ony54")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Road Block4/StaticBody2D" parent_id_path=PackedInt32Array(1462548962, 93910743) index="1" unique_id=674988096]
+position = Vector2(896, 2714)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Phonebooth6" parent="." unique_id=1250607685 instance=ExtResource("13_0ory1")]
+position = Vector2(-3381, -2466)
+
+[node name="Roadsign13" parent="." unique_id=1293044785 instance=ExtResource("10_hxp06")]
+position = Vector2(-4067, -2281)
+
+[node name="Roadsign14" parent="." unique_id=700797421 instance=ExtResource("10_hxp06")]
+position = Vector2(-4070, -1839)
+
+[node name="Roadsign15" parent="." unique_id=2052221383 instance=ExtResource("10_hxp06")]
+position = Vector2(-4547, -1736)
+
+[node name="Roadsign16" parent="." unique_id=132270690 instance=ExtResource("10_hxp06")]
+position = Vector2(-4538, -2227)
+
+[node name="Roadsign17" parent="." unique_id=1474282230 instance=ExtResource("10_hxp06")]
+position = Vector2(-5122, -1631)
+
+[node name="Grocery Store" parent="." unique_id=134189799 instance=ExtResource("17_kam1y")]
+position = Vector2(-6000, -7283)
+
+[node name="Drive Thru" parent="." unique_id=1840317719 instance=ExtResource("18_ony54")]
+position = Vector2(-2691, -1290)
+
+[node name="Highrise57" parent="." unique_id=151200041 instance=ExtResource("7_6euoa")]
+position = Vector2(-2332, -1616)
+
+[node name="Highrise58" parent="." unique_id=1445685527 instance=ExtResource("7_6euoa")]
+position = Vector2(-2122, -1679)
+
+[node name="Highrise59" parent="." unique_id=255247185 instance=ExtResource("7_6euoa")]
+position = Vector2(-1896, -1745)
+
+[node name="Highrise60" parent="." unique_id=1280832384 instance=ExtResource("7_6euoa")]
+position = Vector2(-1700, -1803)
+
+[node name="Highrise61" parent="." unique_id=1925409883 instance=ExtResource("7_6euoa")]
+position = Vector2(-1495, -1831)
+
+[node name="Highrise62" parent="." unique_id=267843200 instance=ExtResource("7_6euoa")]
+position = Vector2(-1330, -1604)
+
+[node name="Highrise63" parent="." unique_id=242915505 instance=ExtResource("7_6euoa")]
+position = Vector2(-1344, -1378)
+
+[node name="Highrise64" parent="." unique_id=460511099 instance=ExtResource("7_6euoa")]
+position = Vector2(-1346, -1130)
+
+[node name="Highrise65" parent="." unique_id=299485992 instance=ExtResource("7_6euoa")]
+position = Vector2(-1346, -955)
+
+[node name="Highrise66" parent="." unique_id=1775972653 instance=ExtResource("7_6euoa")]
+position = Vector2(-1346, -815)
+
+[node name="Highrise67" parent="." unique_id=1314593315 instance=ExtResource("7_6euoa")]
+position = Vector2(-194, -816)
+
+[node name="Highrise68" parent="." unique_id=2050129724 instance=ExtResource("7_6euoa")]
+position = Vector2(27, -783)
+
+[node name="Highrise69" parent="." unique_id=1311277096 instance=ExtResource("7_6euoa")]
+position = Vector2(231, -789)
+
+[node name="Highrise70" parent="." unique_id=2029683916 instance=ExtResource("7_6euoa")]
+position = Vector2(430, -775)
+
+[node name="Highrise71" parent="." unique_id=654654447 instance=ExtResource("7_6euoa")]
+position = Vector2(629, -794)
+
+[node name="Highrise72" parent="." unique_id=1499582594 instance=ExtResource("7_6euoa")]
+position = Vector2(844, -808)
+
+[node name="Highrise73" parent="." unique_id=1503153855 instance=ExtResource("7_6euoa")]
+position = Vector2(996, -811)
+
+[node name="Roadsign18" parent="." unique_id=335511072 instance=ExtResource("10_hxp06")]
+position = Vector2(-866, -701)
+
+[node name="Bench8" parent="." unique_id=1134389958 instance=ExtResource("16_hnalp")]
+position = Vector2(-2122, -2767)
+
+[node name="Phonebooth7" parent="." unique_id=683384518 instance=ExtResource("13_0ory1")]
+position = Vector2(-1841, -2755)
+
+[node name="Parking Meter4" parent="." unique_id=1426737643 instance=ExtResource("15_it4vp")]
+position = Vector2(-2454, 324)
+
+[node name="Parking Meter5" parent="." unique_id=1371584951 instance=ExtResource("15_it4vp")]
+position = Vector2(-1976, 335)
+
+[node name="Roadsign19" parent="." unique_id=1483929626 instance=ExtResource("10_hxp06")]
+position = Vector2(-2285, 330)
+
+[node name="Highrise74" parent="." unique_id=937729628 instance=ExtResource("7_6euoa")]
+position = Vector2(-4498, -1075)
+
+[node name="Highrise75" parent="." unique_id=833246246 instance=ExtResource("7_6euoa")]
+position = Vector2(-4293, -252)
+
+[node name="Highrise76" parent="." unique_id=760061995 instance=ExtResource("7_6euoa")]
+position = Vector2(-4083, -279)
+
+[node name="Highrise77" parent="." unique_id=1148099613 instance=ExtResource("7_6euoa")]
+position = Vector2(-3841, -740)
+
+[node name="Highrise78" parent="." unique_id=2006398155 instance=ExtResource("7_6euoa")]
+position = Vector2(-3893, -546)
+
+[node name="Highrise79" parent="." unique_id=1263764133 instance=ExtResource("7_6euoa")]
+position = Vector2(-3889, -291)
+
+[node name="Traffic Cone9" parent="." unique_id=154151552 instance=ExtResource("14_qql5o")]
+position = Vector2(-3704, -667)
+
+[node name="Traffic Cone10" parent="." unique_id=703422032 instance=ExtResource("14_qql5o")]
+position = Vector2(-3532, -672)
+
+[node name="Traffic Cone11" parent="." unique_id=38353640 instance=ExtResource("14_qql5o")]
+position = Vector2(-3357, -658)
+
+[node name="Traffic Cone12" parent="." unique_id=933781543 instance=ExtResource("14_qql5o")]
+position = Vector2(-3188, -672)
+
+[node name="Traffic Cone13" parent="." unique_id=870593642 instance=ExtResource("14_qql5o")]
+position = Vector2(-2998, -663)
+
+[node name="Roadsign20" parent="." unique_id=1919927530 instance=ExtResource("10_hxp06")]
+position = Vector2(-2426, -633)
+
+[node name="Highrise80" parent="." unique_id=1999463799 instance=ExtResource("7_6euoa")]
+position = Vector2(-4550, -818)
+
+[node name="Highrise81" parent="." unique_id=1997084654 instance=ExtResource("7_6euoa")]
+position = Vector2(-4553, -535)
+
+[node name="Highrise82" parent="." unique_id=365107461 instance=ExtResource("7_6euoa")]
+position = Vector2(-4521, -232)
+
+[node name="Highrise83" parent="." unique_id=297340856 instance=ExtResource("7_6euoa")]
+position = Vector2(-2870, -1092)
+
+[node name="Highrise84" parent="." unique_id=2000868417 instance=ExtResource("7_6euoa")]
+position = Vector2(-1658, -2876)
+
+[node name="Highrise85" parent="." unique_id=1637543679 instance=ExtResource("7_6euoa")]
+position = Vector2(-1485, -2886)
+
+[node name="Highrise86" parent="." unique_id=1068980928 instance=ExtResource("7_6euoa")]
+position = Vector2(-1304, -2879)
+
+[node name="Highrise87" parent="." unique_id=683054428 instance=ExtResource("7_6euoa")]
+position = Vector2(-1121, -2869)
+
+[node name="Highrise88" parent="." unique_id=4895317 instance=ExtResource("7_6euoa")]
+position = Vector2(-955, -2869)
+
+[node name="Highrise89" parent="." unique_id=1844497961 instance=ExtResource("7_6euoa")]
+position = Vector2(-784, -2886)
+
+[node name="Highrise90" parent="." unique_id=1685989611 instance=ExtResource("7_6euoa")]
+position = Vector2(-616, -2881)
+
+[node name="Highrise91" parent="." unique_id=423482320 instance=ExtResource("7_6euoa")]
+position = Vector2(-440, -2886)
+
+[node name="Highrise92" parent="." unique_id=843360328 instance=ExtResource("7_6euoa")]
+position = Vector2(-272, -2901)
+
+[node name="Highrise93" parent="." unique_id=609500451 instance=ExtResource("7_6euoa")]
+position = Vector2(-96, -2889)
+
+[node name="Highrise94" parent="." unique_id=198569326 instance=ExtResource("7_6euoa")]
+position = Vector2(79, -2881)
+
+[node name="Highrise95" parent="." unique_id=285667438 instance=ExtResource("7_6euoa")]
+position = Vector2(263, -2874)
+
+[node name="Highrise96" parent="." unique_id=1360589263 instance=ExtResource("7_6euoa")]
+position = Vector2(443, -2879)
+
+[node name="Highrise97" parent="." unique_id=275405697 instance=ExtResource("7_6euoa")]
+position = Vector2(614, -2876)
+
+[node name="Highrise98" parent="." unique_id=102330856 instance=ExtResource("7_6euoa")]
+position = Vector2(1282, -279)
+
+[node name="Highrise99" parent="." unique_id=1340748260 instance=ExtResource("7_6euoa")]
+position = Vector2(1325, -145)
+
+[node name="Highrise100" parent="." unique_id=822328021 instance=ExtResource("7_6euoa")]
+position = Vector2(1379, 52)
+
+[node name="Highrise20" parent="." unique_id=420551491 instance=ExtResource("7_6euoa")]
+position = Vector2(-7302, -545)
+
+[node name="Highrise101" parent="." unique_id=1200254110 instance=ExtResource("7_6euoa")]
+position = Vector2(-7144, -529)
+
+[node name="Highrise102" parent="." unique_id=102663836 instance=ExtResource("7_6euoa")]
+position = Vector2(-6978, -525)
+
+[node name="Highrise103" parent="." unique_id=1393773701 instance=ExtResource("7_6euoa")]
+position = Vector2(-6812, -521)
+
+[node name="Highrise104" parent="." unique_id=197188341 instance=ExtResource("7_6euoa")]
+position = Vector2(-6647, -512)
+
+[node name="Highrise105" parent="." unique_id=1665763545 instance=ExtResource("7_6euoa")]
+position = Vector2(-6453, -500)
+
+[node name="Highrise106" parent="." unique_id=1818616655 instance=ExtResource("7_6euoa")]
+position = Vector2(-6263, -504)
+
+[node name="Highrise107" parent="." unique_id=802022069 instance=ExtResource("7_6euoa")]
+position = Vector2(-6097, -504)
+
+[node name="Highrise108" parent="." unique_id=1855244572 instance=ExtResource("7_6euoa")]
+position = Vector2(-5911, -517)
+
+[node name="Highrise109" parent="." unique_id=1663858930 instance=ExtResource("7_6euoa")]
+position = Vector2(-5705, -521)
+
+[node name="Roadsign21" parent="." unique_id=1216002212 instance=ExtResource("10_hxp06")]
+position = Vector2(-7273, 78)
+
+[node name="Roadsign22" parent="." unique_id=592971738 instance=ExtResource("10_hxp06")]
+position = Vector2(-6719, 94)
+
+[node name="Roadsign23" parent="." unique_id=764249599 instance=ExtResource("10_hxp06")]
+position = Vector2(-6165, 62)
+
+[node name="Roadsign24" parent="." unique_id=498494576 instance=ExtResource("10_hxp06")]
+position = Vector2(-5850, 54)
+
+[node name="Highrise110" parent="." unique_id=1574135093 instance=ExtResource("7_6euoa")]
+position = Vector2(-7193, 183)
+
+[node name="Highrise111" parent="." unique_id=1842091351 instance=ExtResource("7_6euoa")]
+position = Vector2(-6974, 203)
+
+[node name="Highrise112" parent="." unique_id=201548418 instance=ExtResource("7_6euoa")]
+position = Vector2(-6719, 215)
+
+[node name="Highrise113" parent="." unique_id=841761058 instance=ExtResource("7_6euoa")]
+position = Vector2(-6453, 232)
+
+[node name="Highrise114" parent="." unique_id=816727130 instance=ExtResource("7_6euoa")]
+position = Vector2(-6218, 236)
+
+[node name="Highrise115" parent="." unique_id=2142671234 instance=ExtResource("7_6euoa")]
+position = Vector2(-5959, 308)
+
+[node name="Highrise116" parent="." unique_id=1688025234 instance=ExtResource("7_6euoa")]
+position = Vector2(-5676, 264)
+
+[node name="Highrise117" parent="." unique_id=502043465 instance=ExtResource("7_6euoa")]
+position = Vector2(-5268, 183)
+
+[node name="Highrise118" parent="." unique_id=2026466572 instance=ExtResource("7_6euoa")]
+position = Vector2(-5296, 482)
+
+[node name="Highrise119" parent="." unique_id=1077394191 instance=ExtResource("7_6euoa")]
+position = Vector2(-5316, 777)
+
+[node name="Highrise120" parent="." unique_id=250176285 instance=ExtResource("7_6euoa")]
+position = Vector2(-5486, 195)
+
+[node name="Roadsign25" parent="." unique_id=1203014073 instance=ExtResource("10_hxp06")]
+position = Vector2(-5214, -440)
+
+[node name="Highrise121" parent="." unique_id=277191677 instance=ExtResource("7_6euoa")]
+position = Vector2(-5521, -522)
+
+[node name="Highrise122" parent="." unique_id=491517253 instance=ExtResource("7_6euoa")]
+position = Vector2(-5347, -539)
+
+[node name="Roadsign26" parent="." unique_id=1214065371 instance=ExtResource("10_hxp06")]
+position = Vector2(-4244, -615)
+
+[node name="Phonebooth8" parent="." unique_id=736953537 instance=ExtResource("13_0ory1")]
+position = Vector2(-4330, -1066)
+
+[node name="Phonebooth9" parent="." unique_id=1293844024 instance=ExtResource("13_0ory1")]
+position = Vector2(-4064, -1097)
+
+[node name="Phonebooth10" parent="." unique_id=420352570 instance=ExtResource("13_0ory1")]
+position = Vector2(-3824, -1138)
+
 [connection signal="body_entered" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_entered"]
 [connection signal="body_exited" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_exited"]
+
+[editable path="Road Block"]
+[editable path="Road Block3"]
+[editable path="Road Block2"]
+[editable path="Road Block4"]

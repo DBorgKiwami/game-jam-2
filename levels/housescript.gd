@@ -5,6 +5,7 @@ extends Node2D
 @onready var progressBar = $ProgressBar
 
 func _ready() -> void:
+	$Label.visible = false
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -12,18 +13,21 @@ func _physics_process(delta: float) -> void:
 		progressBar.value = 5.0 - timer.time_left
 
 func _on_house_area_body_entered(body: Node2D) -> void:
-	timer.start()
+	if body is Car:
+		timer.start()
 	pass # Replace with function body.
 
 func _on_house_area_body_exited(body: Node2D) -> void:
-	timer.stop()
-	progressBar.value = 0.0
-	$Label.visible = false
+	if body is Car:
+		timer.stop()
+		progressBar.value = 0.0
+		$Label.visible = false
 	pass # Replace with function body.
 
 func _on_timer_timeout() -> void:
 	if PlayerStats.hasBeenToDriveThru and PlayerStats.hasBeenToGroceryStore:
 		SignalBus.emit_signal("reached_house")
 	else:
+		print("bitch")
 		$Label.visible = true
 	pass # Replace with function body.

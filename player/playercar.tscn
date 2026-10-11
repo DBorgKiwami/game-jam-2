@@ -127,7 +127,7 @@ fixed_fps = 144
 process_material = SubResource("ParticleProcessMaterial_57qmd")
 
 [node name="Timer" type="Timer" parent="." unique_id=1379835781]
-wait_time = 20.0
+wait_time = 15.0
 autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1169319600]
