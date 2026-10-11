@@ -143,6 +143,7 @@ transform = Transform2D(0.4, 0, 0, 0.4, 448.955, 423.405)
 visible = false
 
 [node name="FlatTire" parent="MinigameContainer" unique_id=1738096528 instance=ExtResource("12_4vual")]
+visible = false
 
 [node name="Heater" parent="MinigameContainer" unique_id=1334399775 instance=ExtResource("6_4dapg")]
 visible = false
