@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b41nogyg4jk2m" path="res://images/level_area_mask.png" id="4_t3dhk"]
 [ext_resource type="PackedScene" uid="uid://bl4vjqa80jcv6" path="res://levels/house.tscn" id="5_8j3fl"]
 [ext_resource type="Texture2D" uid="uid://dignekr3rbv8n" path="res://images/dirt_texture.png" id="6_l0kak"]
+[ext_resource type="PackedScene" uid="uid://bqy7m0wp7b6a5" path="res://levels/highrise.tscn" id="7_6euoa"]
 [ext_resource type="PackedScene" uid="uid://6106asoa5w8s" path="res://minigames/fog.tscn" id="8_82lur"]
 
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
@@ -50,6 +51,9 @@ position = Vector2(1651, -572)
 layer = 0
 
 [node name="Fog" parent="ScreenShaders" unique_id=4997018 instance=ExtResource("8_82lur")]
+
+[node name="Highrise" parent="." unique_id=140225898 instance=ExtResource("7_6euoa")]
+position = Vector2(390, -206)
 
 [connection signal="body_entered" from="LevelArea2D" to="Car" method="_on_level_area_2d_body_entered"]
 [connection signal="body_exited" from="LevelArea2D" to="Car" method="_on_level_area_2d_body_exited"]

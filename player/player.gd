@@ -29,6 +29,7 @@ var offroad := false
 
 var forwardSpeed : float = 0
 var turningSpeed : float = 0
+var touchingObject = false
 
 func _ready() -> void:
 	SignalBus.connect("reached_house", victory)
@@ -138,7 +139,13 @@ func _physics_process(delta: float) -> void:#
 	rotating(delta)
 	var crashed = move_and_slide()
 	if crashed:
+		if touchingObject == false:
+			touchingObject = true
+			$Crash.volume_db = remap(abs(forwardSpeed), 0, maxSpeed, -12, -6)
+			$Crash.playing = true
 		forwardSpeed *= crashSpeedMultiplier
+	else:
+		touchingObject = false
 	#print($Timer.time_left)
 	#print(velocity)
 	
