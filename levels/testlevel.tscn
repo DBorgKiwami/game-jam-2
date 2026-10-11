@@ -19,7 +19,8 @@ shrinkSpeed = 50.0
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]
 
 [node name="Car" parent="." unique_id=2090852087 instance=ExtResource("1_04qlu")]
-position = Vector2(1255, 744)
+position = Vector2(1189, 707)
+rotation = 4.9346957
 
 [node name="DirtTexture" type="Sprite2D" parent="." unique_id=1659279530]
 visible = false
