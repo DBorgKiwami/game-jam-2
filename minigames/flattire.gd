@@ -1,11 +1,11 @@
 extends Node2D
-@onready var area_2d: Area2D = $Pump/Area2D
 var pump_has_mouse := false
 var beingClicked := false
-var pressure := 30
+var pressure := 30.0
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
-@onready var pump_sprite: Sprite2D = $Pump
+@onready var area_2d: Area2D = $PumpingLever/Area2D
+@onready var pump_sprite: Sprite2D = $PumpingLever
 
 var og_pump_y
 
@@ -21,14 +21,14 @@ func _physics_process(delta: float) -> void:
 		if (Input.is_action_pressed("left_click") and pump_has_mouse) or beingClicked:
 			beingClicked = true
 			CarStats.clearing_windshield = true
-			pressure = clamp(pressure+.05, 20., 40.);
-			pump_sprite.position.y = clamp(pump_sprite.position.y+.5, og_pump_y, og_pump_y+35.)
+			pressure = clampf(pressure+0.05, 20., 40.);
+			pump_sprite.position.y = clampf(pump_sprite.position.y+.5, -90, 90)
 			#print("pumpinggg", pressure)
 		
 		# DEFLATING IN ANY OTHER CASE
 		else:
-			pressure = clamp(pressure-.05, 0., 40.);
-			pump_sprite.position.y = clamp(pump_sprite.position.y-.5, og_pump_y, og_pump_y+35.)
+			pressure = clampf(pressure-0.05, 0., 40.);
+			pump_sprite.position.y = clampf(pump_sprite.position.y-.5, -90, 90)
 			#print("deflatingg", pressure)
 
 		if Input.is_action_just_released("left_click"):
@@ -42,11 +42,11 @@ func _physics_process(delta: float) -> void:
 			timer.stop()
 
 func _on_pump_area_2d_mouse_entered() -> void:
-	#print("ON pump")
+	print("ON pump")
 	pump_has_mouse = true
 
 func _on_pump_area_2d_mouse_exited() -> void:
-	#print("OFF pump")
+	print("OFF pump")
 	pump_has_mouse = false
 
 func _on_timer_timeout() -> void:
