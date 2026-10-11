@@ -2,11 +2,26 @@ extends CanvasLayer
 
 @onready var player_reference : Car = get_tree().get_first_node_in_group("player")
 @onready var steering_wheel: TextureRect = $ToolbarAndWheel/SteeringWheel
+var buttons
+
+func _on_break(index):
+	buttons[index].modulate = Color(255, 0, 0)
+	#var i = 0
+	#for part in CarStats.car_parts:
+		#print(part)
+		#print(CarStats.car_parts[part])
+		#if !CarStats.car_parts[part]:
+			#buttons[i].modulate = Color(255, 0, 0)
+		#else:
+			#buttons[i].modulate = Color(0, 0, 0)
+		#i += 1
+	pass
 
 func _ready() -> void:
 	#SignalBus.connect("broken_part", _break_part)
 	SignalBus.connect("part_repaired", _fix_part)
-	var buttons := $ToolbarAndWheel/Toolbar/BtnContainer.get_children()
+	SignalBus.connect("broken_part", _on_break)
+	buttons = $ToolbarAndWheel/Toolbar/BtnContainer.get_children()
 	for i in range(buttons.size()):
 		buttons[i].connect("pressed", _on_tool_pressed.bind(i))
 
@@ -23,6 +38,7 @@ func _process(delta: float) -> void:
 # fixed part signal received: disable respective button and minigame
 func _fix_part(index : int):
 	close_all_tabs()
+	buttons[index].modulate = Color(0, 0, 0)
 
 # return btn closes current/all minigame panel(s)
 func _on_return_pressed() -> void:
