@@ -43,6 +43,7 @@ size = Vector2(8874.5, 172.75)
 [node name="CanvasLayer" parent="." unique_id=942157107 instance=ExtResource("19_kam1y")]
 
 [node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
+shrinkSpeed = 7.5
 
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]
 

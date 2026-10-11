@@ -89,7 +89,8 @@ func _physics_process(delta: float) -> void:#
 		offroaddamage += delta
 		if offroaddamage > 10.0:
 			CarStats.break_something()
-			offroaddamage -= 10.0
+			offroaddamage -= 5.0
+	#print(offroaddamage)
 
 	if Input.is_action_pressed("brakes") or offroad:
 		activeMaxSpeed = maxBrakingSpeed

@@ -77,7 +77,7 @@ one_shot = true
 
 [node name="TickTick" type="AudioStreamPlayer2D" parent="." unique_id=940535346]
 stream = ExtResource("4_pij3h")
-volume_db = -4.0
+volume_db = -15.0
 max_distance = 100000000000.0
 max_polyphony = 100
 bus = &"Minigames"
