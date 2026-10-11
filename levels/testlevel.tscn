@@ -40,6 +40,7 @@ size = Vector2(8874.5, 172.75)
 [node name="Testlevel" type="Node2D" unique_id=1543706350]
 
 [node name="Storm" parent="." unique_id=1438828153 instance=ExtResource("1_t3dhk")]
+shrinkSpeed = 20.0
 
 [node name="Toolbar" parent="." unique_id=1357045452 instance=ExtResource("1_hb8io")]
 
@@ -1511,6 +1512,9 @@ position = Vector2(-5483, -3874)
 
 [node name="Tree158" parent="." unique_id=1588455038 instance=ExtResource("11_qql5o")]
 position = Vector2(-5112, -3519)
+
+[node name="Phonebooth20" parent="." unique_id=156900453 instance=ExtResource("13_0ory1")]
+position = Vector2(-4324, -2002)
 
 [connection signal="body_entered" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_entered"]
 [connection signal="body_exited" from="LevelSetup/LevelArea2D" to="Car" method="_on_level_area_2d_body_exited"]

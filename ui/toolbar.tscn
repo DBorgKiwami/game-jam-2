@@ -15,6 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://dws7xuqu0hx5" path="res://minigames/engines.tscn" id="8_vh3at"]
 [ext_resource type="PackedScene" uid="uid://dh8s2kyvn520g" path="res://minigames/windshield.tscn" id="9_m6d4s"]
 [ext_resource type="PackedScene" uid="uid://c8uqd1re44bac" path="res://minigames/flattire.tscn" id="12_4vual"]
+[ext_resource type="Script" uid="uid://bcg8ts1feo18k" path="res://ui/healthbar.gd" id="16_agk5f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agk5f"]
+bg_color = Color(0.28235295, 0.6313726, 0.88235295, 0.23137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vual"]
+bg_color = Color(0.6056108, 0.3130615, 3.85046e-07, 1)
 
 [node name="Toolbar" type="CanvasLayer" unique_id=1357045452]
 script = ExtResource("1_ata6n")
@@ -163,5 +170,14 @@ offset_right = 372.61255
 offset_bottom = -148.51248
 theme_override_font_sizes/font_size = 32
 autowrap_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=479812669]
+custom_minimum_size = Vector2(420, 70)
+offset_right = 4.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_agk5f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4vual")
+show_percentage = false
+script = ExtResource("16_agk5f")
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
