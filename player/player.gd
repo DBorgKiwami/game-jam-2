@@ -162,7 +162,7 @@ func _physics_process(delta: float) -> void:#
 
 func _on_timer_timeout() -> void:
 	print("timer out!")
-	#CarStats.break_something()
+	CarStats.break_something()
 
 func _on_level_area_2d_body_exited(body: Node2D) -> void:
 	#print("car has left level area!")

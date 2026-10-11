@@ -36,11 +36,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	look_at(origin)
+	var functionalOrigin
+	if !CarStats.car_parts["radio"]:
+		functionalOrigin = Vector2(randf_range(-10000, 10000),randf_range(-10000, 10000))
+	else:
+		functionalOrigin = origin
+	look_at(functionalOrigin)
 	rotation += PI * 0.5
 	#print(camera.global_position.distance_to(origin))
-	if camera.global_position.distance_to(origin) > distanceBeforeNeutralPoint:
-		global_position = camera.global_position + (camera.global_position.direction_to(origin) * viewportcenter)
+	if camera.global_position.distance_to(functionalOrigin) > distanceBeforeNeutralPoint:
+		global_position = camera.global_position + (camera.global_position.direction_to(functionalOrigin) * viewportcenter)
 	else:
-		global_position = origin
+		global_position = functionalOrigin
 		rotation = PI
