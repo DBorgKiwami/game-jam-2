@@ -21,7 +21,7 @@ func setup_break() -> void:
 
 func _physics_process(delta: float) -> void:
 	if tempdial.rotation_degrees > -57 and fandial.rotation_degrees < 57:
-		SignalBus.emit_signal("part_repaired", 1)
+		SignalBus.emit_signal("part_repaired", CarStats.car_part.HEATING)
 		tempdial.has_mouse = false
 		tempdial.beingClicked = false
 		fandial.has_mouse = false
