@@ -32,6 +32,7 @@ var turningSpeed : float = 0
 var touchingObject = false
 
 func _ready() -> void:
+	direction = direction.rotated(rotation)
 	SignalBus.connect("reached_house", victory)
 	SignalBus.connect("broken_part", _break_part)
 
@@ -54,6 +55,12 @@ func rotating(delta: float):
 var t := 0.0
 var fog_tween: Tween
 func _process(delta: float) -> void:
+	if !CarStats.car_parts["radio"]:
+		$Radio.volume_db = -40
+		$Radio.pitch_scale = randf_range(0.5, 1.5)
+	else:
+		$Radio.volume_db = -20
+		$Radio.pitch_scale = 1.0
 	t = delta * 0.025
 	if inStorm or !CarStats.car_parts["heating"]:
 		PlayerStats.health = lerp(PlayerStats.health, 0.0, t)

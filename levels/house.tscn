@@ -71,6 +71,7 @@ show_percentage = false
 
 [node name="Waypoint" parent="." unique_id=336144352 instance=ExtResource("5_olatg")]
 position = Vector2(0, -200)
+waypointOrder = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687025612]
 position = Vector2(-2, -5)

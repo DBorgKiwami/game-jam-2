@@ -38,6 +38,7 @@ script = ExtResource("1_2i84x")
 
 [node name="Waypoint" parent="." unique_id=336144352 instance=ExtResource("1_fdlhl")]
 position = Vector2(14, -119)
+waypointOrder = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=345345283]
 z_index = 1
