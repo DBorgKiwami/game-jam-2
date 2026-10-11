@@ -123,9 +123,9 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="MinigameContainer" type="CanvasLayer" parent="." unique_id=985513871]
-offset = Vector2(430, 420)
+offset = Vector2(448.955, 423.405)
 scale = Vector2(0.4, 0.4)
-transform = Transform2D(0.4, 0, 0, 0.4, 430, 420)
+transform = Transform2D(0.4, 0, 0, 0.4, 448.955, 423.405)
 
 [node name="Engine" parent="MinigameContainer" unique_id=1211425801 instance=ExtResource("8_vh3at")]
 visible = false

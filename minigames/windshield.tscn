@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dh8s2kyvn520g"]
 
 [ext_resource type="Script" uid="uid://ckcppo6kfrenh" path="res://minigames/windshield.gd" id="1_7pmbe"]
+[ext_resource type="Texture2D" uid="uid://bub13bpdlh7tc" path="res://images/windshield-view.png" id="2_7pmbe"]
 [ext_resource type="Texture2D" uid="uid://chnevs7bbylrr" path="res://images/wind_shield.png" id="2_fqfgp"]
+[ext_resource type="Texture2D" uid="uid://b01d1icsfv77o" path="res://images/windshield_mirror.png" id="4_aspda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7pmbe"]
-size = Vector2(772, 515)
+size = Vector2(1072, 441)
 
 [node name="Windshield" type="Node2D" unique_id=1467513764]
 script = ExtResource("1_7pmbe")
@@ -29,6 +31,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="WindshieldView" type="Sprite2D" parent="Panel" unique_id=523923724]
+position = Vector2(539.5, 359.5)
+scale = Vector2(0.92380124, 0.89149195)
+texture = ExtResource("2_7pmbe")
+
 [node name="Fog" type="Sprite2D" parent="." unique_id=1711576771]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(12, -99)
@@ -36,17 +43,17 @@ position = Vector2(12, -99)
 [node name="Area2D" type="Area2D" parent="Fog" unique_id=874138189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fog/Area2D" unique_id=2033265881]
-position = Vector2(134, -5.5)
+position = Vector2(-16, -70.5)
 shape = SubResource("RectangleShape2D_7pmbe")
 
 [node name="Windshield Interactibles" type="Node2D" parent="." unique_id=1100404298]
 z_index = 5
-position = Vector2(-671, -222)
+position = Vector2(-698, -310)
 
 [node name="LWindShield" type="Sprite2D" parent="Windshield Interactibles" unique_id=1418928990]
-position = Vector2(454.2897, 494.6634)
-rotation = 0.2617994
-scale = Vector2(0.515, 0.515)
+position = Vector2(520.0012, 500.76813)
+rotation = 0.2198095
+scale = Vector2(0.41, 0.41)
 texture = ExtResource("2_fqfgp")
 offset = Vector2(380.28, -319.395)
 
@@ -59,9 +66,9 @@ position = Vector2(-379.2207, 314.28577)
 polygon = PackedVector2Array(685.78, -382.495, 685.78, -380.79498, 513.07996, -369.395, 507.07996, -369.395, 268.97998, -287.395, 264.68, -287.395, -33.320007, -81.39499, -37.320007, -81.39499, -102.22, 7.305023, -102.22, 10.305023, -128.32, 28.605011, -141.41998, 28.605011, -120.22, 77.704956, -120.22, 85.704956, -44.71997, 92.60498, -37.52002, 92.60498, 2.4799805, 43.60501, 11.47998, 43.60501, 3.7800293, 11.805023, 218.07996, -149.39499, 221.18, -149.39499, 278.78003, -212.29501, 544.68005, -253.39499, 551.68005, -253.39499, 742.88, -326.895, 895.0801, -305.395, 903.68005, -305.395, 913.68005, -318.395, 925.98, -318.395, 910.78, -348.79498, 910.78, -354.69498, 841.78, -376.69498, 841.78, -380.29498)
 
 [node name="RWindShield" type="Sprite2D" parent="Windshield Interactibles" unique_id=1761244245]
-position = Vector2(564, 515.99994)
-rotation = 2.6179938
-scale = Vector2(0.515, 0.515)
+position = Vector2(629.7115, 522.1047)
+rotation = 2.576004
+scale = Vector2(0.41, 0.41)
 texture = ExtResource("2_fqfgp")
 offset = Vector2(-400, -319.395)
 flip_h = true
@@ -73,6 +80,11 @@ position = Vector2(379.2206, -314.2857)
 visible = false
 position = Vector2(-379.2207, 314.28552)
 polygon = PackedVector2Array(-705.5, -382.495, -705.5, -380.79498, -532.8, -369.395, -526.8, -369.395, -288.7, -287.395, -284.40002, -287.395, 13.599976, -81.39499, 17.599976, -81.39499, 82.5, 7.305023, 82.5, 10.305023, 108.599976, 28.605011, 121.69995, 28.605011, 100.5, 77.704956, 100.5, 85.704956, 25, 92.60498, 17.799988, 92.60498, -22.200012, 43.60501, -31.200012, 43.60501, -23.5, 11.805023, -237.79999, -149.39499, -240.90002, -149.39499, -298.5, -212.29501, -564.4, -253.39499, -571.4, -253.39499, -762.6, -326.895, -914.80005, -305.395, -923.4, -305.395, -933.4, -318.395, -945.69995, -318.395, -930.5, -348.79498, -930.5, -354.69498, -861.5, -376.69498, -861.5, -380.29498)
+
+[node name="WindshieldMirror" type="Sprite2D" parent="." unique_id=2036254334]
+z_index = 5
+position = Vector2(19, 3)
+texture = ExtResource("4_aspda")
 
 [connection signal="area_entered" from="Fog/Area2D" to="." method="_on_fog_area_2d_entered"]
 [connection signal="mouse_entered" from="Windshield Interactibles/LWindShield/LWindShieldArea2D" to="." method="_on_area_2d_mouse_entered"]
