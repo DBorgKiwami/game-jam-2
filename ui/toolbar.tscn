@@ -140,6 +140,5 @@ visible = false
 visible = false
 
 [node name="Windshield" parent="MinigameContainer" unique_id=498169465 instance=ExtResource("9_m6d4s")]
-visible = false
 
 [connection signal="pressed" from="ToolbarAndWheel/Toolbar/Return" to="." method="_on_return_pressed"]
